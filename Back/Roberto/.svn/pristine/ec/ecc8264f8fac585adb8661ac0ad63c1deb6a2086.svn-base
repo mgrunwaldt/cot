@@ -1,0 +1,9 @@
+
+<script type='text/javascript' src='/js/languages/admin.js'></script>
+<div class='adminTitle'>Lenguajes</div>
+<div class='adminData'>
+    <div class='adminMainOptions'>
+        <a class='adminMainOption' href='/index.php/Languages/viewAdd'>Nuevo</a>
+        <a class='adminMainOption' href='/index.php/Languages/viewEdit'>Editar/Eliminar</a>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<script type='text/javascript' src='/js/fileManager.js'></script>
+<link href='/css/fileManager.css' rel='stylesheet' type='text/css'/>
+<link href='/css/languages/admin.css' rel='stylesheet' type='text/css'/>
+<script type='text/javascript' src='/js/languages/admin.js'></script>
+
+<div class='adminTitle'>Editar Lenguaje</div>
+<input type='hidden' id='languagId' value='<?php echo($id); ?>'/>
+    
+<div class='adminData'> 
+    
+    <div class='adminDataRow'>
+        <div class='adminDataRowTitle'>Lenguaje:</div>
+        <select id='selectedLanguagId' class='adminInput300'>
+            <option value='0'>Seleccione un Lenguaje</option>
+            <?php 
+                foreach($languages as $languag){
+            ?>
+                <option value='<?php echo $languag->id;?>'><?php echo $languag->name;?></option>
+            <?php
+                }
+            ?>
+        </select>
+        <div id='deleteLanguag' class='adminDeleteButton'>eliminar</div>
+        <input type='hidden' id='confirmationText' value='¿Está seguro que quiere eliminar el Languag?'/>
+    </div>
+    <div class='adminDataRow'>
+        <div class='adminEditSeparation'></div>
+    </div>
+    <?php echo $this->renderPartial('form',array('webTexts'=>$webTexts,'languageWebTexts'=>$languageWebTexts,'isNewRecord'=>$isNewRecord));?>
+    
+    <div class='adminDataRow'>
+        <div id='addLanguag' class='adminSaveButton'>
+            Guardar
+        </div>
+    </div>
+</div>

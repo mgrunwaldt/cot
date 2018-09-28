@@ -1,0 +1,502 @@
+@font-face {
+  font-family: 'FuturaStd-Bold';
+  src: url('/fonts/FuturaStd-Bold.eot?#iefix') format('embedded-opentype'),  url('/fonts/FuturaStd-Bold.otf')  format('opentype'),
+	     url('/fonts/FuturaStd-Bold.woff') format('woff'), url('/fonts/FuturaStd-Bold.ttf')  format('truetype'), url('/fonts/FuturaStd-Bold.svg#FuturaStd-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Helvetica-Light';
+  src: url('/fonts/Helvetica-Light.eot?#iefix') format('embedded-opentype'),  url('/fonts/Helvetica-Light.otf')  format('opentype'),
+	     url('/fonts/Helvetica-Light.woff') format('woff'), url('/fonts/Helvetica-Light.ttf')  format('truetype'), url('/fonts/Helvetica-Light.svg#Helvetica-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-Black';
+  src: url('/fonts/Gotham-Black.eot?#iefix') format('embedded-opentype'),  url('/fonts/Gotham-Black.otf')  format('opentype'),
+	     url('/fonts/Gotham-Black.woff') format('woff'), url('/fonts/Gotham-Black.ttf')  format('truetype'), url('/fonts/Gotham-Black.svg#Gotham-Black') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-Book';
+  src: url('/fonts/Gotham-Book.eot?#iefix') format('embedded-opentype'),  url('/fonts/Gotham-Book.otf')  format('opentype'),
+	     url('/fonts/Gotham-Book.woff') format('woff'), url('/fonts/Gotham-Book.ttf')  format('truetype'), url('/fonts/Gotham-Book.svg#Gotham-Book') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSans-LightItalic';
+  src: url('/fonts/OpenSans-LightItalic.eot?#iefix') format('embedded-opentype'),  url('/fonts/OpenSans-LightItalic.otf')  format('opentype'),
+	     url('/fonts/OpenSans-LightItalic.woff') format('woff'), url('/fonts/OpenSans-LightItalic.ttf')  format('truetype'), url('/fonts/OpenSans-LightItalic.svg#OpenSans-LightItalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: url('/fonts/OpenSans-Light.eot?#iefix') format('embedded-opentype'),  url('/fonts/OpenSans-Light.otf')  format('opentype'),
+	     url('/fonts/OpenSans-Light.woff') format('woff'), url('/fonts/OpenSans-Light.ttf')  format('truetype'), url('/fonts/OpenSans-Light.svg#OpenSans-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-ExtraLight';
+  src: url('/fonts/Gotham-ExtraLight.eot?#iefix') format('embedded-opentype'),  url('/fonts/Gotham-ExtraLight.otf')  format('opentype'),
+	     url('/fonts/Gotham-ExtraLight.woff') format('woff'), url('/fonts/Gotham-ExtraLight.ttf')  format('truetype'), url('/fonts/Gotham-ExtraLight.svg#Gotham-ExtraLight') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-Medium';
+  src: url('/fonts/Gotham-Medium.eot?#iefix') format('embedded-opentype'),  url('/fonts/Gotham-Medium.otf')  format('opentype'),
+	     url('/fonts/Gotham-Medium.woff') format('woff'), url('/fonts/Gotham-Medium.ttf')  format('truetype'), url('/fonts/Gotham-Medium.svg#Gotham-Medium') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-Light';
+  src: url('/fonts/Gotham-Light.eot?#iefix') format('embedded-opentype'),  url('/fonts/Gotham-Light.otf')  format('opentype'),
+	     url('/fonts/Gotham-Light.woff') format('woff'), url('/fonts/Gotham-Light.ttf')  format('truetype'), url('/fonts/Gotham-Light.svg#Gotham-Light') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham-Bold';
+  src: url('/fonts/Gotham-Bold.eot?#iefix') format('embedded-opentype'),  url('/fonts/Gotham-Bold.otf')  format('opentype'),
+	     url('/fonts/Gotham-Bold.woff') format('woff'), url('/fonts/Gotham-Bold.ttf')  format('truetype'), url('/fonts/Gotham-Bold.svg#Gotham-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AGaramondPro-Regular';
+  src: url('/fonts/AGaramondPro-Regular.eot?#iefix') format('embedded-opentype'),  url('/fonts/AGaramondPro-Regular.otf')  format('opentype'),
+	     url('/fonts/AGaramondPro-Regular.woff') format('woff'), url('/fonts/AGaramondPro-Regular.ttf')  format('truetype'), url('/fonts/AGaramondPro-Regular.svg#AGaramondPro-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html{
+    min-height:100%;
+}    
+body{
+  position: absolute;
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+}
+
+table{
+    border: none;
+    border-spacing: 0px;
+}
+
+.font1{
+    font-family: 'Gotham-Black';
+    font-weight:normal;
+    -webkit-font-smoothing: auto;
+}
+.font2{
+    font-family: 'Gotham-Book';
+    font-weight:normal;
+    -webkit-font-smoothing: auto;
+}
+.font3{
+    font-family: 'OpenSans-LightItalic';
+    font-weight:normal;
+    -webkit-font-smoothing: auto;
+}.font4{
+    font-family: 'OpenSans-Light';
+    font-weight:normal;
+    -webkit-font-smoothing: auto;
+}
+.font5{
+    font-family: 'Gotham-ExtraLight';
+    font-weight:normal;
+    -webkit-font-smoothing: auto;
+}
+.font6{
+    font-family: 'Gotham-Medium';
+    font-weight:normal;
+    -webkit-font-smoothing: auto;
+}
+.font7{
+    font-family: 'Gotham-Light';
+    font-weight:normal;
+    -webkit-font-smoothing: auto;
+}
+.font8{
+    font-family: 'Gotham-Bold';
+    font-weight:normal;
+    -webkit-font-smoothing: auto;
+}
+.font9{
+    font-family: 'AGaramondPro-Regular';
+    font-weight:normal;
+    -webkit-font-smoothing: auto;
+}
+
+.color1{color: #464646;}
+.color2{color: white;}
+.color3{color: #831416;}
+.color4{color:#A47442;}
+.color5{color:#FFBC00;}
+.color6{color:#12262B;}
+.color7{color:#515150;}
+.color8{color:#80d734;}
+.color9{color:#000000;}
+
+
+.backgroundColor1{background-color: #A47442;}
+.backgroundColor2{background-color: #821315;}
+.backgroundColor3{background-color: #3F3F3F;}
+.backgroundColor4{background-color: white;}
+.backgroundColor5{background-color: #A47442;}
+.backgroundColor6{background-color: rgba(237, 236, 227, 0.85);}
+
+.border1{border: 1px solid #BDD740}
+
+body{
+}
+
+input{
+    font-family:inherit;
+    color:inherit;
+    font-size: inherit;
+    outline: none;
+    border: none;
+    background-repeat: no-repeat;
+    font-weight: inherit;
+}
+select{
+    font-family:inherit;
+    color:inherit;
+    font-size: inherit;
+    -webkit-appearance: none; 
+    box-shadow: none !important;
+    outline: none;
+    font-weight: inherit;
+}
+
+.radioBtn{
+    -webkit-appearance: radio;
+    font-weight: inherit;
+}
+
+textArea{
+    font-family:inherit;
+    color:inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+a{
+    text-decoration: inherit;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.centeredContent{
+    position:relative;
+    width:1024px;
+    margin:0 auto;
+    font-size:14px;
+    height:auto;
+    overflow:hidden;
+}
+
+#alertMessageFixedContainer{
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    display:none;
+}
+#alertMessageDivContainer{
+    position:absolute;
+    left:0px;
+    width:100%;
+    top:0px;
+    height:100%;
+}
+#alertMessageDiv{
+    position:relative;
+    margin: 0px auto;
+    margin-top: 10%;
+    padding-bottom: 40px;
+    width:338px;
+    background-color: #FFFFFF;
+    border: 1px solid #686868;
+}
+#alertMessageLogoDiv{
+    position: relative;
+    width: 98px;
+    height: 70px;
+    margin: 0 auto;
+    margin-top: 34px;
+}
+
+#alertMessageLogo{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    margin-top: 35px;
+    width: 98px;
+}
+#alertMessageBkgImg{
+    position:absolute;
+    left:0px;
+    top:0px;
+}
+.alertMessageCloseMessage{
+  width: 16px;
+  height: 15px;
+  position: absolute;
+  background-color: #12262B;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  padding-top: 1px;
+  font-size: 14px;
+}
+
+.alertMessageCloseMessage:hover{
+    background-color: #2A6775;
+}
+
+#alertMessageMessage{
+    position: relative;
+    width: 80%;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 45px;
+}
+
+#alertMessageAceptarWrapper{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+}
+
+#alertMessageAceptar{
+    position:relative;
+    margin:0 auto;
+    width: 216px;
+    height: 20px;
+    padding-top: 8px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 14px;
+    background-color: #3F3F3F;
+}
+
+#alertMessageAceptar:hover{
+    cursor:pointer;
+    background-color: rgb(202, 202, 202);
+}
+
+.alertMessageClose{
+    width: 16px;
+    height: 15px;
+    position: absolute;
+    background-color: #ffffff;
+    top: 16px;
+    right: 16px;
+    cursor: pointer;
+    text-align: center;
+    color: white;
+    padding-top: 1px;
+    font-size: 14px;
+}
+
+.alertMessageClose:hover{
+    background-color: #CACACA;
+}
+
+.alertMessageCloseMessage:hover{
+    background-color: #CACACA;
+}
+
+#loaderFixedContainer{
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    display:none;
+}
+#loaderDivContainer{
+    position:absolute;
+    left:0px;
+    width:100%;
+    top:0px;
+    height:100%;
+}
+#loaderDiv{
+    position:relative;
+    margin: 0px auto;
+    margin-top: 20%;
+    width:40px;
+}
+
+.fullBackground{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    display:none;
+}
+
+.blackOpacity{
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    opacity:0.5;
+    filter:alpha(opacity=50);
+    background-color: black;
+}
+
+.whiteOpacity{
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    opacity:0.9;
+    filter:alpha(opacity=90);
+    background-color: white;
+}
+
+.fullRelative{
+    position:relative;
+    width:100%;
+    height:100%;
+}
+
+.centeredLogon{
+    position:relative;
+    width:720px;
+    margin:0 auto;
+    background-color:white;
+    margin-top:10%;
+    margin-bottom: 10%;
+}
+
+#registerUserBtn{
+    margin-top:20px;
+}
+
+
+#loginUserBtn:hover{
+    cursor:pointer;
+}
+
+
+#registerUserBtn{
+    cursor:pointer;
+}
+
+
+#loginTopMenu:hover{
+    cursor:pointer;
+}
+.unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+.pointedBlueLine{
+    background-image: url('/images/pointedBlueLine.png');
+    background-repeat: repeat-x;
+}
+
+.sexRadioBtn{
+    float:left;
+    width:25px;
+    margin-top: 10px;
+}
+
+.sexTypeText{
+    float:left;
+    margin-right: 12px;
+    margin-top: 8px;
+}
+
+.checkbox{
+    float: left;
+    position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 4px;
+    background-color: #EC1C24;
+    margin-top:5px;
+}
+
+.checkboxTickImg{
+    position: absolute;
+    left: 2px;
+}
+
+.transparentCheckBox{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -2px;
+    top: -3px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    cursor:pointer;
+}
+.studio4dSprite {
+  background-image: url(/files/layouts/studio4dsprite.png);
+  overflow: hidden;
+  position: absolute;
+}
+.blackBkg75{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.75;
+}
+#headerRow2{
+    position: relative;
+    display: block;
+    margin-top: 0px;
+    color: white;
+    text-align: center;
+    font-size: 19px;
+    font-size: 33px;
+    letter-spacing: 6px;
+    height: 40px;
+}
+.buttonContainer {
+    position: relative;
+    width: 33.33%;
+    float: left;
+    overflow: hidden;
+    background-color: #2a2a2a;
+    margin-top: 6px;
+}
+.buttonContainer:hover {
+    background-color: #80d734;
+}
+.buttonsText{
+    position: relative;
+    display: block;
+    margin: 12px auto;
+    font-size: 15px;
+}

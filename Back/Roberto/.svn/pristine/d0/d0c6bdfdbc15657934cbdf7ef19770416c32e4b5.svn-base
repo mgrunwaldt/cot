@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+    <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="language" content="es" />
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="icon" sizes="16x16 32x32 64x64" href="/favicon.ico">
+	<link rel="icon" type="image/png" sizes="196x196" href="/favicon-192.png">
+	<link rel="icon" type="image/png" sizes="160x160" href="/favicon-160.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+	<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+	<link rel="apple-touch-icon" href="/favicon-57.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/favicon-114.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/favicon-72.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/favicon-144.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/favicon-60.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/favicon-120.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/favicon-76.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/favicon-152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+	<meta name="msapplication-TileColor" content="#FFFFFF">
+	<meta name="msapplication-TileImage" content="/favicon-144.png">
+	<meta name="msapplication-config" content="/browserconfig.xml">
+        <meta property="og:title" content="<?php echo $this->pageTitle; ?>" />
+        <meta property="og:description" content="<?php echo $this->pageDescription; ?>" />
+        <?php foreach($this->pageImages as $pageImage){ ?>
+        <meta property="og:image" content="<?php echo $pageImage; ?>" />
+        <?php } ?>
+        
+        <title><?php echo $this->pageTitle; ?></title>
+        <link href="/css/reset.css" rel="stylesheet" type="text/css">
+        <link href="/css/main.css" rel="stylesheet" type="text/css">
+        <link href="/css/layouts/main.css?v=2" rel="stylesheet" type="text/css">
+
+        <script src="/js/jquery/jquery.js"></script>
+        <script src="/js/jquery/jquery-ui.js"></script>
+        <script type="text/javascript" src="/js/tools.js"></script>
+        <script type="text/javascript" src="/js/layouts/main.js"></script>
+    </head>
+
+    <body class="font1">
+            <input type="hidden" id="nameError" value="<?php echo WebTexts::getValueByName("Debe ingresar nombre"); ?>"/>
+            <input type="hidden" id="emailError" value="<?php echo WebTexts::getValueByName("Debe ingresar email"); ?>"/>
+            <input type="hidden" id="phoneError" value="<?php echo WebTexts::getValueByName("Debe ingresar telefono"); ?>"/>
+            <input type="hidden" id="aboutError" value="<?php echo WebTexts::getValueByName("Debe ingresar asunto"); ?>"/>
+            <input type="hidden" id="messageError" value="<?php echo WebTexts::getValueByName("Debe ingresar mensaje"); ?>"/>
+            <input type="hidden" id="internetError" value="<?php echo WebTexts::getValueByName("Error internet"); ?>"/>
+            <input type="hidden" id="invalidEmail" value="<?php echo WebTexts::getValueByName("Email invalido"); ?>"/>
+            
+            <div id="headerDummy"></div>
+            <?php 
+                echo $content;
+            ?>
+            <div id="footerDummy"></div>
+            <div id="header" class="color3">
+                <div class="centeredContent" style="overflow:visible">
+                    <div id="headerMenuContainer">
+                        <div id="headerMenu">
+                            <a href='/Site/viewLocation'>
+                                <div class="headerMenuItem"><?php echo WebTexts::getValueByName("Localizacion"); ?></div>
+                            </a>
+                            <a href="/Site/viewSpirit">
+                                <div class="headerMenuItem"><?php echo WebTexts::getValueByName("Espiritu"); ?></div>
+                            </a>
+                            <a href="/Site/index">
+                                <img id="headerMenuLogo" src="/files/layouts/logo.png" alt="chacras de las sierras logo"/>
+                            </a>
+                            <a href="/Site/viewServices">
+                                <div class="headerMenuItem"><?php echo WebTexts::getValueByName("Servicios"); ?></div>
+                            </a>
+                            <a href="/Site/viewInvestment">
+                                <div class="headerMenuItem"><?php echo WebTexts::getValueByName("Inversion"); ?></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div id="headerContact">
+                        <div id="headerContactInfo"><b>CHACRAS DE LAS SIERRAS</b> - SIERRA DE LAS ÁNIMAS - URUGUAY</div>
+                        <div id="headerContactInfoButton" class="color2 backgroundColor5 font3"><?php echo WebTexts::getValueByName("Contacto"); ?></div>
+                    </div>
+                    <div id="contactDiv" class="backgroundColor5">
+                        <img id="contactLogo" src="/files/layouts/contactLogo.png"/>
+                        <input type="text" id="contactName" class="contactInput font3" placeholder="<?php echo WebTexts::getValueByName("Nombre"); ?>"/>
+                        <input type="text" id="contactEmail" class="contactInput font3" placeholder="<?php echo WebTexts::getValueByName("Email"); ?>"/>
+                        <input type="text" id="contactPhone" class="contactInput font3" placeholder="<?php echo WebTexts::getValueByName("Telefono"); ?>"/>
+                        <input type="text" id="contactAbout" class="contactInput font3" placeholder='<?php echo WebTexts::getValueByName("Asunto"); ?>'/>
+                        <textarea id="contactMessage" class="contactInput font3" placeholder='<?php echo WebTexts::getValueByName("Mensaje"); ?>'></textarea>
+                        <div id="contactSend" class="font2">
+                            <?php echo WebTexts::getValueByName("Enviar"); ?>
+                            <img id="contactSendImg" src="/files/layouts/contactSend.png"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+            <div id="footer" class="backgroundColor2 color2 font3">
+                <div id="footerContainer" class="centeredContent">
+                    <img id="footerLogoLetters" src="/files/layouts/whiteLogoLetters.png" alt="chacras de las sierras logo blanco letras"/>
+                    <img id="footerLogoImage" src="/files/layouts/whiteLogoImage.png" alt="chacras de las sierras logo blanco"/>
+                    <div id="footerCol1">
+                        <div class="footerRow1">Alejandro Schroeder 6558</div>
+                        <div class="footerRow2">Montevideo | Uruguay</div>
+                    </div>
+                    <div id="footerCol2">
+                        <div class="footerRow1">Tel: 2604 2078</div>
+                        <div class="footerRow2">Cel: +598 99 51 71 81 | +598 94 40 89 79</div>
+                    </div>
+                    <div id="footerCol3">
+                        <div class="footerRow1 footerBold"><?php echo WebTexts::getValueByName("Contactese"); ?></div>
+                        <div id="footerEmail" class="footerRow2">info@chacrasdelassierras.com</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loaderFixedContainer">
+                <div id="loaderDivContainer">
+                    <div class="blackOpacity"></div>
+                    <div id="loaderDiv">
+                        <img src="/files/loader.gif" width="40" height="40"/>
+                    </div>
+                </div>
+            </div>
+            <div id="alertMessageFixedContainer">
+                <div id="alertMessageDivContainer">
+                    <div class="whiteOpacity"></div>
+                    <div id="alertMessageDiv">
+                        <div id="alertMessageLogoDiv">
+                            <img id="alertMessageLogo" src="/files/layouts/logo.png"/>
+                        </div>
+                        <div id="alertCloseButton" class="alertMessageCloseMessage">X</div>
+                        <div id="alertMessageMessage"></div>
+                        <div id="alertMessageAceptarWrapper"><div id="alertMessageAceptar" class="normalButton"><?php echo WebTexts::getValueByName("Aceptar"); ?></div></div>
+                    </div>
+                </div>
+            </div>
+        </body>
+</html>

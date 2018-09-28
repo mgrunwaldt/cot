@@ -1,0 +1,479 @@
+proje#body{
+    width:100%;
+    height:100%;
+}
+#gallery{
+    position:relative;
+    width:100%;
+    height:100%;
+    height:auto;
+    overflow: hidden;
+}
+#galleryItemContainer{
+    position: relative;
+    width:100%;
+    height:500px;
+}
+#galleryVideo{
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    opacity:0;
+}
+#galleryBlackCover{
+    position: absolute;
+    width:100%;
+    height:100%;
+    top:0px;
+    left:0px;
+    background-color: black;
+    opacity:0;
+}
+#galleryImage{
+    position: absolute;
+    display:block;
+    width:100%;
+    top:0px;
+    left:0px;
+    opacity:0;
+}
+#coverContainer{
+    height:650px;
+    font-size: 10px;
+    min-width: 1024px;
+    letter-spacing: 2px;
+    background-image: url("/files/site/coverBackground.jpg");
+    background-size: cover;
+}
+#coverLogoImage{
+    position: relative;
+    display: block;
+    height: 160px;
+    margin-left: 420px;
+    margin-top: 130px;
+}
+#coverRow2{
+    position: relative;
+    display: block;
+    margin-top: 100px;
+    color: white;
+    text-align: center;
+    font-size: 19;
+    font-size: 33px;
+    letter-spacing: 6px;
+}
+#coverRow3{
+    position: relative;
+    display: block;
+    margin-top: 25px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+}
+#aboutUsRobertoContainer{
+    position:relative;
+    height:380px;
+    font-size: 10px;
+    min-width: 1024px;
+    letter-spacing: 2px;
+    background-color: white;
+    background-size: cover;    
+}
+#aboutUsRobertoRow1{
+    position: relative;
+    display: block;
+    margin-top: 65px;
+    text-align: center;
+    font-size: xx-large;
+    color: #dd4b2f;
+}
+#aboutUsRobertoRow2{
+    position: relative;
+    display: block;
+    margin-top: 65px;
+    text-align: center;
+    font-size: medium;
+    color: gray;
+    letter-spacing: 5px;
+    line-height: 160%;
+}
+.buttonsCol{
+    position: relative;
+    display: block;
+    float: left;
+    margin-left: 55px;
+    margin-top: 92px;
+}
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+#buttonsContainer{
+    height:380px;
+    font-size: 10px;
+    min-width: 1024px;
+    letter-spacing: 2px;
+    background-size: cover;
+    overflow:hidden;
+}
+.buttons{
+    height: 175px;
+}
+.titles{
+    color: #FFBC00;
+    text-align: center;
+    margin-top: 10px;
+}
+.projectImage{
+    position: absolute;
+    width: 108%;
+    background: black;
+    margin-left: -4%;
+    margin-top: -4%;
+    margin-right: -4%;
+    margin-bottom: -4%;
+
+}
+#portfolioRow1{
+    font-size: 10px;
+    height: 100px;
+    min-width: 1024px;
+    margin-right: 90px;
+}
+#portfolioRow2{
+    position: relative;
+    font-size: 10px;
+    min-width: 1024px;
+    max-width: 2000px;
+    height: auto;
+    overflow: hidden;
+}
+#portfolioSuperiorBarCol1{
+    position: relative;
+    display: block;
+    margin-top: 43px;
+    float: left;
+    margin-left: 95px;
+    font-size: 22px;
+    font-weight: bolder;
+}
+#portfolioSuperiorBarCol2{
+    position: relative;
+    display: block;
+    margin-top: 50px;
+    float: left;
+    margin-left: 460px;
+    font-size: 13px;
+}
+.portfolioSuperiorBarOptions{
+    position: relative;
+    display: block;
+    margin-top: 46px;
+    float: right;
+    margin-left: 30PX;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.portfolioSuperiorBarOptions:hover{
+    cursor:pointer;
+    font-weight:bold;
+}
+.portfolioSuperiorBarOptionsSelected{
+    position: relative;
+    display: block;
+    margin-top: 46px;
+    float: right;
+    margin-left: 30PX;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+.shadow {
+-moz-box-shadow: 0 0 30px 5px #999;
+-webkit-box-shadow: 0 0 30px 5px #999;
+}
+#portfolioSuperiorBarTitle{
+    position: relative;
+    display: block;
+    margin-top: 40px;
+    float: left;
+    margin-left: 80PX;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+#portfolioSuperiorBarSubTitle{
+    position: relative;
+    display: block;
+    margin-top: 46px;
+    float: left;
+    margin-left: 310px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+#portfolioContainer{
+    font-size: 10px;
+    min-width: 1024px;
+    z-index: 4;
+     
+}
+.projectContainer {
+    position: relative;
+    width: 33%;
+    float: left;
+    overflow: hidden;
+    display: block;
+}
+#portfolio{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+.projectImageOverlay{
+    position: absolute;
+    background-image: url("/files/site/projectsOverlay.png");
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.projectImageText{
+    position: relative;
+    font-size: 24px;
+    float: left;
+    margin-top: 18px;
+    margin-left: 15px;
+}
+.projectImageSubText{
+    position: absolute;
+    font-size: 24px;
+    float: left;
+    margin-top: 25px;
+    margin-left: 15px;
+}
+.projectInfoButton{
+    position: absolute;
+    height:50px;
+    right: 28px;
+    bottom: 28px;
+}
+.selectedPortfolioOption{
+    font-family: 'Gotham-Black';
+    text-decoration: underline;
+}
+/*#coverLogoImageBackground{
+    position: relative;
+    width: 100%;
+    height: auto;
+}*/
+/*#cover{
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    min-width: 1100px;
+}*/
+#videoContainer{
+    position: relative;
+    width: 100%;
+    height: 460px;
+    overflow: hidden;
+    min-width: 1100px;
+}
+#videoRep{
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+#videoTitle{
+    font-size: 31px;
+    margin-top: 60px;
+    margin-left: 22%;
+}
+#textCover{
+    position: relative;
+    height: 745px;
+    display: block;
+    margin: 0 auto;
+    margin-top: -775px;
+}
+#upperText{
+    position: relative;
+    height: 24px;
+    display: block;
+    margin: 0 auto;
+    top: -550px;
+}
+/*#productsContainer{
+    //position: relative;
+    //width: 100%;
+    //height: auto;
+    //overflow: hidden;
+    //min-width: 1100px;
+//}*/
+#backgroundProducts{
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+/*#productInfoContainer{
+    position: absolute;
+    margin-top: -550px;
+    margin-left: 690px;
+}*/
+.productsTitle{
+    margin-bottom: 8px;
+}
+.productsDescription{
+    margin-bottom: 10px;
+}
+.lastProductDescription{
+    margin-bottom: 20px;
+}
+#formTitle{
+    font-size: 32px;
+    text-align: center;
+    min-width: 1100px;
+    margin-top: 160px;
+}
+#products{
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    min-width: 1100px;
+}
+#productsContainer{
+    min-height: 1040px;
+    min-width: 100%;
+    background-image: url("/files/site/entireProductsBackground.png");
+    background-size: cover;
+    background-position: 50% 50%;
+}
+#productInfoContainer{
+    position: relative;
+    display: block;
+    float: left;
+    margin-left: 500px;
+    margin-top: 362px;
+    font-size: 18px;
+}
+#cover{
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    min-width: 1100px;
+}
+#form{
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    min-width: 1100px;
+}
+#formContainer{
+    min-height: 1182px;
+    min-width: 100%;
+    background-image: url("/files/site/formBackground.png");
+    background-size: cover;
+    background-position: 50% 50%; 
+}
+#topForm{
+    position: relative;
+    margin-top: 55px;
+    margin-left: 150px;
+    font-size: 14px;
+}
+.dataInput {
+    position: relative;
+    width: 310px;
+    height: 24px;
+    background-color: white;
+    border: 1px solid grey;
+    margin-top: 8px;
+}
+.col1{
+    position: relative;
+    float: left;
+    margin-left: 0px;
+    margin-top: 40px;
+
+}
+.col2{
+    position: relative;
+    float: left;
+    margin-left: 100px;
+    margin-top: 40px;
+}
+#nameInput{
+    
+}
+#phoneInput{
+    
+}
+#separator{
+    position: relative;
+    width: 100%;
+    height: 280px;
+}
+#bottomForm{
+    position: relative;
+    margin-top: 380px;
+    margin-left: 150px;
+    font-size: 12px;
+}
+.questionsInput {
+    position: relative;
+    float: left;
+    margin-left: 50px;
+}
+#preguntaEnergiaOptions{
+    margin-top: 20px;
+}
+.checkboxesText{
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+.preguntaEnergia{
+    margin-top: 85px;
+}
+#annotation{
+    position: relative;
+    margin-top: 100px;
+    margin-left: 150px;
+    font-size: 12px;
+}
+#alertMessageEnviarWrapper{
+    position: relative;
+    margin-top: 40px;
+}
+
+#alertMessageEnviar{
+    position:relative;
+    margin:0 auto;
+    width: 216px;
+    height: 20px;
+    padding-top: 8px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 14px;
+    background-color: #3F3F3F;
+}
+
+#alertMessageEnviar:hover{
+    cursor:pointer;
+    background-color: rgb(202, 202, 202);
+}
+#portfolioRow2 .mix{
+	display: none;
+}
+::selection {
+  background: #ffbc00;
+}
+::-moz-selection {
+  background: #ffbc00; 
+}

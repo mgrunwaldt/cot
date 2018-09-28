@@ -1,0 +1,37 @@
+.redHighlights{
+    width:90%;
+    margin-left:5%;
+}
+.redHighlight{
+    width:100%;
+    margin-bottom:20px;
+    font-size:15px;
+    line-height:20px;
+}
+.imageInfo{
+    top:25%;
+}
+#wineTitle{
+    width: 90%;
+    margin-left: 5%;
+    font-size: 16px;
+    height: 45px;
+    line-height: 45px;
+}
+#wineImg{
+    width: 90%;
+    margin-left: 5%;
+}
+#wineSubtitle{
+    width: 80%;
+    margin-left: 10%;
+    font-size: 15px;
+}
+#brownLogo{
+    margin-bottom:20px;
+}
+#wineText{
+    width: 80%;
+    margin-left: 10%;
+    text-align: justify;
+}

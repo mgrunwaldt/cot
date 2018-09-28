@@ -1,0 +1,222 @@
+<?php
+
+/**
+ * This is the model class for table "languages".
+ *
+ * The followings are the available columns in table 'languages':
+ * @property integer $id
+ * @property string $name
+ * @property boolean $is_default
+ * @property datetime $updated_on
+ * @property boolean $active
+ * @property boolean $deleted
+ */
+ 
+class Languages extends CActiveRecord{
+    
+        public static $SPANISH = 10;
+        public static $ENGLISH = 12;
+	/**
+	 * Returns the static model of the specified AR class.
+	 * @return Languages the static model class
+	 */
+	public static function model($className=__CLASS__){
+		return parent::model($className);
+	}
+
+	/**
+	 * @return string the associated database table name
+	 */
+	public function tableName(){
+		return 'languages';
+	}
+
+	/**
+	 * @return array validation rules for model attributes.
+	 */
+	public function rules(){
+		// NOTE: you should only define rules for those attributes that
+		// will receive user inputs.
+		return array(
+			array('name, is_default, updated_on, active, deleted, ', 'required'),
+                        array('is_default, active, deleted, ', 'boolean'),
+                        array('updated_on, ', 'date', 'format'=>'yyyy-MM-dd hh:mm:ss'),
+                        array('name', 'length', 'max'=>255),
+                        array('id, name, is_default, updated_on, active, deleted, ', 'safe', 'on'=>'search'),
+                        
+		);
+	}
+
+	/**
+	 * @return array relational rules.
+	 */
+	public function relations(){
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
+		return array(
+		);
+	}
+
+	/**
+	 * @return array customized attribute labels (name=>label)
+	 */
+	public function attributeLabels(){
+		return array(
+			'id' => 'ID',
+                        'name' => 'Name',
+                        'is_default' => 'IsDefault',
+                        'updated_on' => 'UpdatedOn',
+                        'active' => 'Active',
+                        'deleted' => 'Deleted',
+                        
+		);
+	}
+
+	/**
+	 * Retrieves a list of models based on the current search/filter conditions.
+	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+	 */
+	public function search(){
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+
+		$criteria=new CDbCriteria;
+
+		$criteria->compare('name',$this->name,true);
+                $criteria->compare('is_default',$this->is_default);
+                $criteria->compare('updated_on',$this->updated_on);
+                $criteria->compare('active',$this->active);
+                $criteria->compare('deleted',$this->deleted);
+                
+
+		return new CActiveDataProvider(get_class($this), array(
+			'criteria'=>$criteria,
+		));
+	}
+        
+        public static function get($id){
+            $languag = self::model()->findByPk($id);
+            if(isset($languag->id))
+                return $languag;
+            else
+                return false;
+        }
+        
+        public static function getAll(){
+            return self::model()->findAll('id>0 AND deleted=0');
+        }
+        
+        public static function create($name, $is_default, $active, $webTexts){
+            $languag = new Languages;
+            $languag->name = $name;
+            $languag->is_default = $is_default;
+            $languag->updated_on = HelperFunctions::getDate();
+            $languag->active = $active;
+            $languag->deleted = 0;
+            
+            if($languag->save()){
+            
+                foreach($webTexts as $webText){
+                    $newText= new LanguageWebTexts;
+                    $newText->language_id=$languag->id;
+                    $newText->web_text_id=$webText['id'];
+                    $newText->value=str_replace("'","`",$webText['value']);
+                    $newText->updated_on = HelperFunctions::getDate();
+                    $newText->deleted = 0;
+                    
+                    if(!$newText->save())
+                         Errors::log('Error en Models/Languages/create','Error creating language_web_text',print_r($newText->getErrors(),true));
+                }
+                
+                return $languag;
+            }
+            else{
+                Errors::log('Error en Models/Languages/create','Error creating languag',print_r($languag->getErrors(),true));
+                return $languag;
+            }
+        }
+            
+        public function updateAttributes($name, $is_default, $active,$webTexts){
+            
+            
+            $this->name = $name;
+            $this->is_default = $is_default;
+            $this->updated_on = HelperFunctions::getDate();
+            $this->active = $active;
+ 
+            foreach($webTexts as $webText){
+                    $text= LanguageWebTexts::model()->find('language_id='.$this->id.' AND web_text_id='.$webText['id']);
+                    if(!isset($text->id)){
+                        $text=new LanguageWebTexts;
+                        $text->language_id=$this->id;
+                        $text->web_text_id=$webText['id'];
+                        $text->deleted=0;
+                    }
+                    
+                    $text->value=str_replace("'","`",$webText['value']);
+                    $text->updated_on = HelperFunctions::getDate();
+                    
+                    if(!$text->save())
+                         Errors::log('Error en Models/Languages/create','Error creating language_web_text',print_r($text->getErrors(),true));
+            }
+            
+            if($this->save())
+                return true;
+            else{
+                Errors::log('Error en Models/Languages/updateLanguag','Error updating languag id:$this->id', print_r($this->getErrors(),true));
+                return false;
+            }
+        }
+            
+        public static function checkUnique($name, $id=0){
+            $languages = self::model()->findAll("name=:nameVar",array('nameVar'=>$name));
+            if(count($languages)>1)
+                return false;
+            else if(count($languages)==1 && $languages[0]->id!=$id)
+                return false;
+            return true;
+        }
+            
+        
+            
+        public function deleteLanguag(){
+            $this->deleted = 1;
+            $this->updated_on = HelperFunctions::getDate();
+            
+            $languageWebTexts=  LanguageWebTexts::getAllFromLanguage($this->id);
+            
+            foreach($languageWebTexts as $text){
+                $text->deleted=1;
+                $text->updated_on = HelperFunctions::getDate();
+                
+                if(!$text->save())
+                    Errors::log('Error en Models/Languages/deleteLanguag','Error deleting languag id:$this->id', print_r($text->getErrors(),true));
+            }   
+            
+            if($this->save())
+                return true;
+            else{
+                Errors::log('Error en Models/Languages/deleteLanguag','Error deleting languag id:$this->id', print_r($this->getErrors(),true));
+                return false;
+            }
+        }
+        
+        public static function defaultLanguageAssigned($id){
+            
+            if($id==-1){
+                return Languages::model()->exists("is_default=1");
+            }
+            else{
+                return Languages::model()->exists("is_default=1 AND id!=".$id);
+            }
+            
+        }
+        
+        public static function getDefault(){
+            
+            return Languages::model()->find("is_default=1")->id;
+        }
+            
+        
+}
+?>

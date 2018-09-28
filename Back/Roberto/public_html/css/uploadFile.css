@@ -1,0 +1,19 @@
+.floatingDiv{
+    position:absolute; left:0px; top:0px; z-index:100; -moz-opacity:0; filter:alpha(opacity=0); opacity: 0; cursor:pointer;
+}
+.floatingDiv:hover{
+    cursor:pointer;
+}
+.file{
+    cursor:pointer;
+}
+.file:hover{
+    cursor:pointer;
+}
+body{
+    overflow: hidden;
+    cursor:pointer;
+}
+body:hover{
+    cursor:pointer;
+}

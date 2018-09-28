@@ -1,0 +1,16 @@
+/* 
+    Document   : admin
+    Created on : Jun 19, 2014, 11:48:49 AM
+    Author     : etcraf
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.centeredWebTextTitle{ 
+   width: 100%;
+    text-align: center;
+    font-size: 24px;
+    color: #666666;
+    margin-top: 5px;
+}
+

@@ -1,0 +1,351 @@
+<?php
+    
+    class RanchesController extends Controller{
+	/**
+	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
+	 * using two-column layout. See 'protected/views/layouts/column2.php'.
+	 */
+	public $layout='//layouts/column2';
+
+	/**
+	 * @return array action filters
+	 */
+	public function filters(){
+		return array(
+			'accessControl', // perform access control for CRUD operations
+		);
+	}
+
+	/**
+	 * Specifies the access control rules.
+	 * This method is used by the 'accessControl' filter.
+	 * @return array access control rules
+	 */
+	public function accessRules(){
+		return array(
+			
+                        array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('view'),
+				'users'=>array('*'),
+			),
+			array('allow', // allow authenticated user to perform 'create' and 'update' actions
+				'actions'=>array('getArray','getAllArray','viewMain','viewAdd','viewEdit','add','save', 'savePositions','delete'),
+				'users'=>array('@'),
+				'expression'=>'isset(Yii::app()->user->role) && (Yii::app()->user->role===\'admin\')',
+			),
+			array('allow', // allow admin user to perform 'admin' and 'delete' actions
+				'actions'=>array(),
+				'users'=>array('admin'),
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
+
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionViewMain(){
+		try
+		{
+                    $ranches = Ranches::getAll();
+                    $this->render('main', array('ranches'=>$ranches));
+		}
+		catch (Exception $ex)
+		{
+			Errors::log('Error en RanchesController/actionViewMain',$ex->getMessage(),'');
+			$this->redirect('/site/userError');
+		}
+	}
+
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionViewAdd()
+	{
+		try
+		{
+                    
+                    $this->render('add',array());
+		}
+		catch (Exception $ex)
+		{
+			Errors::log('Error en RanchesController/actionViewAdd',$ex->getMessage(),'');
+			$this->redirect('/site/userError');
+		}
+	}
+
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionViewEdit($id=0)
+	{
+		try
+		{
+                    $ranches = Ranches::getAll();
+                    
+                    $this->render('edit',array('id'=>$id, 'ranches'=>$ranches, ));
+		}
+		catch (Exception $ex)
+		{
+			Errors::log('Error en RanchesController/actionViewEdit',$ex->getMessage(),'');
+			$this->redirect('/site/userError');
+		}
+	}
+
+	/**
+	 * Displays a particular model.
+	 * @param integer $id the ID of the model to be displayed
+	 */
+	public function actionAdd()
+	{
+                $response = array();
+		try
+		{
+                    if(isset($_POST['ranch']) && is_array($_POST['ranch'])){
+                        $ranchArray = $_POST['ranch'];
+                        if(isset($ranchArray['name']) && isset($ranchArray['description']) && isset($ranchArray['ranch_file_id']) && isset($ranchArray['lat']) && isset($ranchArray['long'])){
+                            
+                                $ranch = Ranches::create($ranchArray['name'],$ranchArray['description'],$ranchArray['ranch_file_id'],$ranchArray['lat'],$ranchArray['long']);
+                                if(!$ranch->hasErrors()){
+                                    
+                                    
+
+                                    $response['status'] = 'ok';
+                                    $response['message'] = Ranches::getModelName('singular') . ' agregado.';
+                                    $response['id'] = $ranch->id;
+                                    
+                                    Logs::log('Se creó el Ranch '.$ranch->id);
+                                }
+                                else{
+                                    $response['status'] = 'error';
+                                    $response['error'] = 'errorSavingRanch';
+                                    $response['errorMessage'] = HelperFunctions::getErrorsFromModel($ranch);
+                                }
+                            
+                        }
+                        else{
+                            $response['status'] = 'error';
+                            $response['error'] = 'invalidData';
+                            $response['errorMessage'] = 'invalidData';
+                        }
+                    }
+                    else{
+                        $response['status'] = 'error';
+                        $response['error'] = 'noData';
+                        $response['errorMessage'] = 'noData';
+                    }
+                    echo json_encode($response);
+		}
+		catch (Exception $ex)
+		{
+                    Errors::log('Error en RanchController/actionAdd',$ex->getMessage(),'');
+                    $response['status'] = 'error';
+                    $response['error'] = 'unknown';
+                    $response['errorMessage'] = 'unknown';
+                    echo json_encode($response);
+		}
+	}
+        
+	public function actionSave()
+	{
+                $response = array();
+		try{
+                    if(isset($_POST['ranch']) && is_array($_POST['ranch'])){
+                        $ranchArray = $_POST['ranch'];
+                        if(isset($ranchArray['id']) && is_numeric($ranchArray['id']) && isset($ranchArray['name']) && isset($ranchArray['description']) && isset($ranchArray['ranch_file_id']) && isset($ranchArray['lat']) && isset($ranchArray['long'])){
+                            $ranch = Ranches::get($ranchArray['id']);
+                            if(isset($ranch->id)){
+                                
+                                    $ranch->updateAttributes($ranchArray['name'],$ranchArray['description'],$ranchArray['ranch_file_id'],$ranchArray['lat'],$ranchArray['long']);
+                                    if(!$ranch->hasErrors()){
+                                        
+                                        
+                                        $response['status'] = 'ok';
+                                        $response['message'] = Ranches::getModelName('singular') . ' guardado.';
+
+                                        Logs::log('Se editó el Ranch '.$ranch->id);
+                                    }
+                                    else{
+                                        $response['status'] = 'error';
+                                        $response['error'] = 'ErrorSavingRanch';
+                                        $response['errorMessage'] = HelperFunctions::getErrorsFromModel($ranch);
+                                    }
+                                
+                            }
+                            else{
+                                $response['status'] = 'error';
+                                $response['error'] = 'NoRanchWithId';
+                                $response['errorMessage'] = 'NoRanchWithId';
+                            }
+                        }
+                        else{
+                            $response['status'] = 'error';
+                            $response['error'] = 'invalidData';
+                            $response['errorMessage'] = 'invalidData';
+                        }
+                    }
+                    else{
+                        $response['status'] = 'error';
+                        $response['error'] = 'noData';
+                        $response['errorMessage'] = 'noData';
+                    }
+                    echo json_encode($response);
+		}
+		catch (Exception $ex)
+		{
+                    Errors::log('Error en RanchesController/actionSave',$ex->getMessage(),'');
+                    $response['status'] = 'error';
+                    $response['error'] = 'unknown';
+                    $response['errorMessage'] = 'unknown';
+                    echo json_encode($response);
+		}
+	}
+        
+        
+            
+        public function actionSavePositions(){
+                $response = array();
+		try{
+                    if(isset($_POST['ranchIds']) && is_array($_POST['ranchIds'])){
+                        Ranches::savePositions($_POST['ranchIds']);
+                        $response['status'] = 'ok';
+                        $response['message'] = 'Posiciones guardadas';
+                    }
+                    else{
+                        $response['status'] = 'error';
+                        $response['error'] = 'noData';
+                        $response['errorMessage'] = 'noData';
+                    }
+                    echo json_encode($response);
+		}
+		catch (Exception $ex)
+		{
+                    Errors::log('Error en RanchesController/actionSave',$ex->getMessage(),'');
+                    $response['status'] = 'error';
+                    $response['error'] = 'unknown';
+                    $response['errorMessage'] = 'unknown';
+                    echo json_encode($response);
+		}
+        }
+        
+        
+        
+        public function actionGetArray(){
+            try{
+                if(isset($_POST['id']) && is_numeric($_POST['id'])){
+                    $ranch = Ranches::get($_POST['id']);
+                    if(isset($ranch->id)){
+                        $ranchArray = HelperFunctions::modelToArray($ranch);
+                        
+                        
+        $ranch->loadRanchFile();
+        $ranchArray['ranchFile'] = HelperFunctions::modelToArray($ranch->ranchFile);
+                        
+                        $response['status'] = 'ok';
+                        $response['ranch'] = $ranchArray;
+                    }
+                    else{
+                        $response['status'] = 'error';
+                        $response['error'] = 'NoRanchWithId';
+                        $response['errorMessage'] = 'NoRanchWithId';
+                    }
+                }
+                else{
+                    $response['status'] = 'error';
+                    $response['error'] = 'invalidData';
+                    $response['errorMessage'] = 'invalidData';
+                }
+                echo json_encode($response);
+            }
+            catch (Exception $ex){
+                Errors::log('Error en RanchesController/actionGetArray',$ex->getMessage(),'');
+                $response['status'] = 'error';
+                $response['error'] = 'unknown';
+                $response['errorMessage'] = 'unknown';
+                echo json_encode($response);
+            }
+        }
+        
+        public function actionGetAllArray(){
+            try{
+                $ranchesArray = array();
+                $ranches = Ranches::getAll();
+                foreach($ranches as $ranch)
+                    $ranchesArray[] = HelperFunctions::modelToArray($ranch);
+                
+                $response['ranches'] = $ranchesArray;
+                $response['status'] = 'ok';
+                
+                echo json_encode($response);
+            }
+            catch (Exception $ex){
+                Errors::log('Error en RanchesController/actionGetAllArray',$ex->getMessage(),'');
+                $response['status'] = 'error';
+                $response['error'] = 'unknown';
+                $response['errorMessage'] = 'unknown';
+                echo json_encode($response);
+            }
+        }
+        
+	public function actionDelete()
+	{
+                $response = array();
+		try{
+                    if(isset($_POST['id']) && is_numeric($_POST['id'])){
+                        $ranch = Ranches::get($_POST['id']);
+                        if(isset($ranch->id)){
+                            $ranch->deleteRanch();
+                            $response['status'] = 'ok';
+                            $response['message'] = Ranches::getModelName('singular') . ' eliminado.';
+                                    
+                            Logs::log('Se eliminó el Ranch '.$_POST['id']);
+                        }
+                        else{
+                            $response['status'] = 'error';
+                            $response['error'] = 'noRanchWithId';
+                            $response['errorMessage'] = 'noRanchWithId';
+                        }
+                    }
+                    else{
+                        $response['status'] = 'error';
+                        $response['error'] = 'noData';
+                        $response['errorMessage'] = 'noData';
+                    }
+                    echo json_encode($response);
+		}
+		catch (Exception $ex)
+		{
+                    Errors::log('Error en RanchesController/actionDelete',$ex->getMessage(),'');
+                    $response['status'] = 'error';
+                    $response['error'] = 'unknown';
+                    $response['errorMessage'] = 'unknown';
+                    echo json_encode($response);
+		}
+	}
+        
+        public function actionView($id){
+            try{
+                $this->layout='//layouts/column1';
+                $ranch = Ranches::get($id);
+                if($ranch != false){
+                    $ranch->loadRanchFile();
+                    $ranches = Ranches::getAll();
+                    if($this->isMobile)
+                        $this->layout='mobile';
+                    $this->render('view', array('ranch'=>$ranch, 'ranches'=>$ranches));
+                }else{
+                    $this->redirect('/Site/userError');
+                }
+            } catch (Exception $ex) {
+                    Errors::log('Error en RanchesController/actionView',$ex->getMessage(),'');
+                    $this->redirect('/Site/userError');
+            }
+        }
+        
+}
+?>

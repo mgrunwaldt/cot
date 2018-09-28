@@ -1,0 +1,23 @@
+<link href="/css/site/index.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/js/site/index.js"></script>
+
+<script src="/js/jquery/jquery.lettering.js"></script>
+<script src="/js/jquery/jquery.textillate.js"></script>
+<link href="/css/jquery/animate.css" rel="stylesheet" type="text/css" />
+
+<input type='hidden' id='contactArea' value='0'/>
+<div id="headerSeparation" class="backgroundColor2"></div>
+<div id="gallerContainer">
+    <?php 
+        $items = array();
+        foreach($highlights as $highlight){
+            $item = HelperFunctions::modelToArray($highlight->highlightFile);
+            $item['title'] = $highlight->title;
+            $item['font_size'] = $highlight->font_size;
+            $item['letter_spacing'] = $highlight->letter_spacing;
+            $items[] = $item;
+        }
+        $this->renderPartial('/tools/gallery', array('items'=>$items, 'showCircles'=>1, 'fullScreen'=>0));
+    ?>
+
+</div>

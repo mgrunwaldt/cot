@@ -1,0 +1,396 @@
+body{
+	background-color: #CCCCCC;	
+    font-family:'tahoma';
+}
+
+.page{
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+}
+
+.topBar{
+	position:absolute;
+	top: -45px;
+	left:0px;
+	width:100%;
+	height:45px;
+	background-color: #313131;	
+}
+
+.messagesContainer{
+	position:relative;
+	top:60px;
+	margin:0px auto;	
+	width:700px;
+	background-color: white;
+	margin-bottom: 20px;	
+}
+
+.logoDiv{
+	position:absolute;
+	top:10px;
+	left:10px;
+	width:80px;
+	height:29px;
+}
+
+.welcomeText{
+	position:absolute;
+	top:7px;
+	left: 100px;
+	color: #FFFFFF;
+	text-align: left;
+	width:400px;
+}
+.closeSession{
+	position:absolute;
+	top:15px;
+	right:10px;
+	width:100px;
+	height:100%;	
+}
+
+.closeSession a{
+	text-decoration: none;
+	color: #FFFFFF;
+}
+
+.messageClass{
+	position:relative;
+	width:100%;
+	min-height:92px;
+}
+
+.messageTitle{
+	position:absolute;
+	width:500px;
+	top:5px;
+	left:102px;
+	font-size:15px;
+	font-weight:bold;
+	color: #313131;
+}
+
+.date{	
+	font-weight:normal;
+	color: #CCCCCC;
+}
+
+.newMessage{
+	position:absolute;
+	right:5px;
+	top:0px;
+	color:#0066FF;
+	font-size: 17px;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+.newMessage:hover{
+	cursor:pointer;	
+}
+
+.message{
+	color: #666666;
+	padding-left: 105px;
+	padding-top: 27px;
+	margin-bottom: 15px;
+	width: 500px;
+	word-wrap:break-word;
+}
+
+.pictureFrame{
+	position:absolute;
+	top:5px;
+	left:15px;
+	width:82px;
+	height:82px;	
+}
+
+.userImage{
+	position: absolute;
+	top: 3px;
+	left: 9px;
+	width: 63px;
+	height: 76px;
+}
+
+.userImage_Cagnoli{
+	position:absolute;
+	top:26px;
+	left:0px;
+	width:80px;
+	height:29px;
+}
+
+.divisionLine{
+	position:relative;
+	width:100%;
+	height:1px;
+	background-color:#808080;		
+}
+
+.containerTitle{
+	position: relative;
+	top: 6px;
+	left: 17px;
+	width: 670px;
+	font-size: 18px;
+	font-weight: bold;
+	height: 36px;
+}
+
+.topLeft{
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+.topRight{
+	position:absolute;
+	top:0px;
+	right:0px;
+}
+
+.bottomRight{
+	position:absolute;
+	bottom:0px;
+	right:0px;
+}
+
+.bottomLeft{
+	position:absolute;
+	bottom:0px;
+	left:0px;
+}
+.space20{
+	height:20px;
+}
+
+.createMessageView{
+	position:fixed;
+	width:100%;
+	height:100%;
+	top:0px;
+	left:0px;
+	display:none;
+}
+
+.pageCover{
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0px;
+	left:0px;
+	background-color:black;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+}
+
+.createMessageContainer{
+	position:relative;	
+	width:520px;
+	height:246px;
+	margin:0px auto;
+	margin-top:10%;
+}
+.createMessageContainerBkg{
+	position:absolute;
+	top:10px;
+	left:0px;;
+	width:520px;
+	height:226px;	
+	background-color: #313131;
+}
+.createMessageContainerBkg2{
+	position:absolute;
+	top:0px;
+	left:10px;;
+	width:500px;
+	height:246px;	
+	background-color: #313131;
+}
+
+.leftVertical{
+	position: absolute;
+	top: 8px;
+	left: 0px;
+	width: 1px;
+	height: 228px;
+	background-color: white;
+}
+
+.rightVertical{
+	position: absolute;
+	top: 8px;
+	right: 0px;
+	width: 1px;
+	height: 228px;
+	background-color: white;	
+}
+
+.topHorizontal{
+	position: absolute;
+	top: 0px;
+	left: 10px;
+	width: 500px;
+	height: 1px;
+	background-color: white;
+}
+
+.bottomHorizontal{
+	position: absolute;
+	bottom: 0px;
+	left: 10px;
+	width: 500px;
+	height: 1px;
+	background-color: white;	
+}
+
+.createNewMsg{
+	position:absolute;	
+	top:8px;
+	left:0px;
+	width:100%;
+	height:29px;
+	color:white;
+	text-align: center;
+}
+
+.closeMessage{
+	position:absolute;
+	right:15px;
+	top:0px;
+}
+
+.closeMessage:hover{
+	cursor:hand;
+}
+
+.textAreaClass{
+	position: absolute;
+	top: 30px;
+	left: 23px;
+	width: 473px;
+	height: 130px;
+	text-align: left;
+	font-style: italic;
+	color:grey;
+}
+
+.chooseFile{
+	position:absolute;
+	top:177px;
+	left:7px;
+	width:100px;
+    height:30px;
+    overflow:hidden;
+}
+
+.chooseFileFrame{
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+}
+
+.fileTB{
+	position: absolute;
+	top: 180px;
+	left: 114px;
+	width: 392px;
+	height: 21px;	
+	background-color: #313131;
+	border: solid white thin;
+	color: #2DE5CC;
+}
+
+.enviarBtnClass{
+	position: absolute;
+	top: 213px;
+	left: 121px;
+	width: 254px;
+	height: 21px;
+}
+
+.bottomBar{
+	position:fixed;
+	bottom:-45px;
+	width:100%;
+	height:45px;
+	background-color:#313131;	
+}
+
+.bottomSpace{
+	position:relative;
+	width:100%;
+	height: 110px;	
+}
+
+.attachment{
+	position: absolute;
+	height: 60px;
+	width: 60px;
+	top: 19px;
+	right: 10px;
+	color: #0066FF;
+	font-size: 14px;
+}
+
+.centered{
+	position: relative;
+	margin-left: 10px;
+}
+
+.telephoneBottomBar{
+	position:absolute;
+	left:15px;
+	top:8px;
+	width:38px;
+	height:27px;
+}
+
+.facebookBottomBar{
+	position:absolute;
+	right:60px;
+	top:8px;
+	width:30px;
+	height:30px;
+}
+
+.twitterBottomBar{
+	position:absolute;
+	right:15px;
+	top:8px;
+	width:30px;
+	height:30px;
+}
+
+.contactBottomBar{
+	position: absolute;
+	right: 98px;
+	top: 13px;
+	width: 240px;
+	color:white;
+}
+
+.num1BottomBar{
+	position:absolute;
+	top:3px;
+	left:60px;
+	color:white;
+}
+
+.num2BottomBar{
+	position:absolute;
+	top:22px;
+	left:60px;
+	color:white;
+}
+
+
+

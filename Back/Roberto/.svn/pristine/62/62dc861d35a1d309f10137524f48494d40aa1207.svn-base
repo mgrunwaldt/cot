@@ -1,0 +1,99 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 25, 2016, 3:49:31 PM
+    Author     : Martin
+*/ 
+#projectDevelopment{
+    /*height: 500px;*/
+    /*background-color: black;*/
+}
+#projectDevelopmentContainer{
+    background-color: #F9F9F9;
+}
+#projectCol1{
+    /*height: 500px;*/
+    position: relative;
+    float: left;
+    width: 650px;
+    margin-top: 75px;
+}
+#projectCol2{
+    /*height: 500px;*/
+    position: relative;
+    float: left;
+    width: 350px;
+    margin-top: 95px; 
+    margin-left: 24px;
+}
+.projectTitle{
+    position: relative;
+    margin-top: 25px;
+}
+.projectInfo{
+    position: relative;
+    margin-top: 8px;
+}
+.projectImage{
+    position: relative;
+    height: 375px;
+}
+#fullscreenImageContainer{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    top: 0;
+    margin: 0 auto;
+    display: none;
+    background-color: rgba(128, 128, 128, 0.9);
+    min-width: 1024px;
+}
+#magnifiedImageContainer{
+    position: relative;
+    height:calc(56% + 6px);
+    top: 5%;
+    display: block;
+    margin: 0 auto;
+    background-color: transparent;
+
+}
+#magnifiedImage{
+    position: relative;
+    height:98%;
+    top: 1%;
+    left: 1%;
+    display: block;
+    margin: 0 auto;
+
+}
+#rightArrowGallery{
+    height: 60px;
+    position: relative;
+    float: right;
+    margin-right: 12px;
+    bottom: 232px;
+}
+#leftArrowGallery{
+    height: 60px;
+    position: relative;
+    float: left;
+    margin-left: 12px;
+    bottom: 232px;
+}
+#closeIcon{
+    position: absolute;
+    height: 30px;
+    right: 6px;
+    top: 1%;
+
+}
+
+::selection {
+  background: #ffbc00; 
+}
+::-moz-selection {
+  background: #ffbc00;
+}

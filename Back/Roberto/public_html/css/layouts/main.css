@@ -1,0 +1,526 @@
+#header{
+    position: absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    background-color: transparent;
+    /*background-color: #12262B;*/
+}
+#headerContainer{
+    height: 48px;
+    opacity: 1;
+    position: fixed;
+    width: inherit;
+}
+#headerColor{
+    position:absolute;
+    width:100%;
+    height:100%;
+    background-color : #12262B; 
+    opacity:0;
+}
+#headerMenuContainer{
+    position: relative;
+    width:100%;
+    text-align: center;
+}
+#headerMenu{
+    position: relative;
+    display: inline-block;
+    width:auto;
+    margin-top: 30px;
+}
+.headerMenuItem{
+    position: relative;
+    float: left;
+    font-size: 16px;
+    letter-spacing: 4px;
+    margin-left: 35px;
+    margin-right: 35px;
+    margin-top: 75px;
+}
+.headerMenuOptions:hover{
+    cursor: pointer;
+}
+.footerInferiorBarOptions:hover{
+    cursor: pointer;    
+}
+#headerMenuLogo{
+    position: relative;
+    float: left;
+    letter-spacing: 2px;
+    height: 110px;
+}
+#headerContact{
+    position: absolute;
+    right: 0px;
+    top: 30px;
+}
+#headerContactInfo{
+    font-size: 9px;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+#headerContactInfoButton{
+    width: 55px;
+    height: 12px;
+    position: relative;
+    float: left;
+    font-size: 10px;
+    padding: 2px 2px 2px 2px;
+    margin-left: 8px;
+}
+#headerContactInfoButton:hover{
+    cursor:pointer;
+    opacity:0.8;
+}
+#footer{
+    position: absolute;
+    bottom:0px;
+    left:0px;
+    height:394px;
+    width: 100%;
+}
+#footerInferiorBar{
+    position: relative;
+    background-color: #192b30;
+    height:50px;
+    width: 100%;
+    min-width: 1023px;
+}
+#headerDummy{
+    position: relative;
+    width:100%;
+    height:175px;
+}
+#headerSuperiorMenuImage{
+    position: relative;
+    float: left;
+    margin-top: 8px;
+}
+#headerSuperiorMenuImage:hover{
+    position: relative;
+    float: left;
+    margin-top: 8px;
+    cursor: pointer;
+}
+#footerDummy{
+    position: relative;
+    width:100%;
+    height:394px;
+    /*
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    */
+}
+#footerContainer{
+    height:344px;
+    font-size: 10px;
+    min-width: 1024px;
+    letter-spacing: 2px;
+    background-image: url("/files/site/footerBackground.jpg");
+        background-size: cover;
+}
+#footerLogoLetters{
+    position: relative;
+    display: block;
+    height: 30px;
+    float: left;
+    margin-top: 37px;
+}
+#footerLogoImage{
+    position: relative;
+    display: block;
+    height: 120px;
+    float: left;
+    margin-left: 90px;
+    margin-top: 95px;
+}
+#footerCol1{
+    position: relative;
+    display: block;
+    float: left;
+    margin-left: 55px;
+    margin-top: 120px;
+}
+#footerCol2{
+    position: relative;
+    display: block;
+    margin-top: 30px;
+    float: left;
+    margin-left: 35px;
+}
+#footerCol3{
+    position: relative;
+    display: block;
+    margin-top: 30px;
+    float: left;
+    margin-left: 35px;
+    letter-spacing: 0px;
+    font-size: 12px;
+    line-height: 18px;
+}
+.footerRow1{
+    position: relative;
+    width: 100%;
+    line-height: 15px;
+}
+.footerRow2{
+    position: relative;
+    width: 100%;
+    line-height: 45px;
+    letter-spacing: 0px;
+}
+.footerRow3{
+    position: relative;
+    width: 100%;
+    letter-spacing: 0px; 
+}
+.footerRow4{
+    position: relative;
+    width: 100%;
+}
+    
+.footerBold{
+    font-weight: bold;
+}
+
+#footerEmail{
+    letter-spacing: 3px;
+    font-size: 10px;
+}
+#contactDiv{
+    position: absolute;
+    width: 350px;
+    height: 0px;
+    overflow:hidden;
+    right: 0px;
+    top: 47px;
+    border:1px solid white;
+}
+#contactLogo{
+    position: relative;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 20px;
+    margin-bottom:30px;
+}
+#contactMessage{
+    resize:none;
+    height:125px;
+    border: 1px solid white;
+}
+#contactName{
+    border: 1px solid white;
+    color: white;
+}
+#contactEmail{
+    border: 1px solid white;
+    color: white;
+}
+.contactInput{
+    position: relative;
+    width: 90%;
+    margin-left: 12%;
+    margin-bottom: 15px;
+    height: 27px;
+    padding-left: 10px;
+    color: white;
+    letter-spacing: 1px;
+    background-color: transparent;
+}
+#contactSend {
+    letter-spacing: 2px;
+    font-size: 13px;
+    position: relative;
+    text-align: center;
+    height: 27px;
+    width: 90%;
+    margin-bottom: 40px;
+    margin-left: 12%;
+    color: white;
+    padding-left: 4%;
+    line-height: 32px;
+    background-color: #FFBC00;
+}
+#contactSend:hover{
+    cursor:pointer;
+}
+
+.grow:hover
+{
+-webkit-transform: scale(1.05);
+-ms-transform: scale(1.05);
+transform: scale(1.05);
+}
+#contactSendImg{
+    height: 25px;
+    position: absolute;
+    top: 4px;
+    right: 10px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    #A47442;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #A47442;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #A47442;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    #A47442;
+}
+.highlightImageDiv{
+    position: relative;
+    width: 100%;
+    max-height: 440px;
+    overflow:hidden;
+}
+.highlightImage{
+    position: relative;
+    width: 100%;
+}
+.infoContainer{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    top: 35%;
+    opacity:0.9;
+}
+.sierrasLogo{
+    position: relative;
+    width: 85px;
+    margin: 0px auto;
+    display: block;
+    margin-bottom:20px;
+}
+.sierrasText{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 13px;
+
+}
+.content{
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+.highlightCaption{
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.highlightCaptionImage{
+    display: block;
+    margin: 0px auto;
+    margin-top: 20px;
+    width: 85px;
+    margin-bottom: 25px;
+    opacity:0.85;
+}
+.highlightCaptionText{
+    width: 76%;
+    margin-left: 12%;
+    text-align: center;
+    font-size: 13px;
+    line-height: 24px;
+    margin-bottom: 35px;
+    color: #831416;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+.columnsText{
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    line-height: 23px;
+    font-size: 15px;
+    -webkit-column-gap: 25px;
+    -moz-column-gap: 25px;
+    column-gap: 25px;    
+    text-align: justify;
+}
+.pairedImages{
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+    height: auto;
+    overflow: hidden;
+    margin-top:30px;
+}
+.leftImg{
+    position:relative;
+    float:left;
+    width:49%;
+    margin-bottom:16px;
+}
+.rightImg{
+    position: relative;
+    float: left;
+    width: 49%;
+    margin-left: 2%;
+    margin-bottom:16px;
+}
+.imageInfo{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    top: 37%;
+}
+.imageLogo{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 75px;
+}
+.infoText{
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    font-size: 19px;
+    letter-spacing: 2px;
+}
+.bottomImg{
+    position:relative;
+    width:100%;
+    height:100%;
+}
+#footerInferiorBarCol1{
+    position: relative;
+    display: block;
+    margin-top: 9px;
+    float: left;
+    margin-left: 25px;
+    font-size: 12px
+}
+#footerInferiorBarCol1:hover{
+    position: relative;
+    display: block;
+    margin-top: 9px;
+    float: left;
+    margin-left: 25px;
+    font-size: 12px;
+    cursor: pointer;
+}
+#footerInferiorBarCol2{
+    position: relative;
+    display: block;
+    margin-top: 20px;
+    float: left;
+    margin-left: 95px;
+    font-size: 12px;
+}
+#footerInferiorBarCol3{
+    position: relative;
+    display: block;
+    margin-top: 20px;
+    float: left;
+    margin-left: 8px;
+    font-size: 12px;
+}
+#footerInferiorBarCol4{
+    position: relative;
+    display: block;
+    margin-top: 20px;
+    float: left;
+    margin-left: 8px;
+    font-size: 12px;
+}
+#footerInferiorBarCol5{
+    position: relative;
+    display: block;
+    margin-top: 18px;
+    float: right;
+    margin-right: 25px;
+    font-size: 13px;
+}
+#coverMenuIcon{
+    position: relative;
+    float: right;
+    margin-top: 12px;
+}
+#headerSuperiorMenuCol2{
+    position: relative;
+    float: right;
+    margin-top: 19px;
+    margin-left: 585px;
+}
+#headerSuperiorMenuCol2:hover{
+    position: relative;
+    float: right;
+    margin-top: 19px;
+    margin-left: 585px;
+    color:#febc11;
+    cursor: pointer;
+}
+#headerSuperiorMenuCol3{
+    position: relative;
+    float: right;
+    margin-top: 19px;
+    margin-left: 30px;
+}
+#headerSuperiorMenuCol3:hover{
+    position: relative;
+    float: right;
+    margin-top: 19px;
+    margin-left: 30px;
+    color:#febc11;
+    cursor: pointer;
+}
+#headerSuperiorMenuCol4{
+    position: relative;
+    float: right;
+    margin-top: 19px;
+    margin-left: 30px;
+}
+#headerSuperiorMenuCol4:hover{
+    position: relative;
+    float: right;
+    margin-top: 19px;
+    margin-left: 30px;
+    color:#febc11;
+    cursor: pointer;
+}
+
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    white;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    white;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    white;
+}
+::selection {
+  background: #ffbc00; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #ffbc00; /* Gecko Browsers */
+}

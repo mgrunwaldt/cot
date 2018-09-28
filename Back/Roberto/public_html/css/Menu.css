@@ -1,0 +1,82 @@
+.Menu{
+    position: absolute;
+    left: 210px;
+    top: 70px;
+    font-size: 16px;
+    width: 1095px;
+    margin: 10px auto;
+    z-index: 100;
+    text-align: center;
+}
+.MenuCol{
+    position:absolute;
+    height:28px;
+    overflow:hidden;
+    left:0px;
+    top:0px;
+    width:100%;
+}
+.MenuMainItem{
+    position:relative;
+    height:26px;
+    width:100%;
+    border: none;
+    color:white;
+}
+.MenuMainItem:hover{
+    cursor:pointer;
+}
+.MenuItem{
+    position:relative;
+    height:auto;
+    width:100%;
+    border: none;
+    color:white;
+    background-color: #39B0F3;
+    font-size: 14px;
+}
+.MenuItem:hover{
+    cursor:pointer;
+}
+.MenuItemA{
+    position:relative;
+    text-decoration: none;
+    color:inherit;
+    left: 0px;
+    top: 2px;
+    text-align: center;
+    width:100%;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+.MenuItemA:hover{
+    color: #EEEEEE;
+    cursor:pointer;
+    text-align: center;
+}
+#contentOuter{
+    position:absolute;
+    width:100%;
+    top:80px;
+}
+#content{
+    position:relative;
+}
+.MenuTd{
+    text-align: center;
+    position:relative;
+    text-align: center;
+}
+.spacer8{
+    position: relative;
+    height:8px;
+    background-color: #39B0F3;
+}
+#menuBkg{
+    position: absolute;
+    left: 205px;
+    top: 73px;
+    width: 1095px;
+    height: 35px;
+    background-color: rgb(41, 170, 231);
+}

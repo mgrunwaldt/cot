@@ -1,0 +1,148 @@
+#searchSectors{
+    position: relative;
+    width:225px;;
+    height:auto;
+    overflow:hidden;
+    float:left;
+}
+.searchSector{
+    position: relative;
+    margin-top: 8px;
+}
+.searchSector:hover{
+    cursor:pointer;
+}
+.searchSectorAccordionArrow{
+    position: relative;
+    margin-top: -1px;
+    float: left;
+    font-size: 15px;
+    margin-right: 3px;
+    font-weight: bold;
+}
+.searchSectorAccordionArrowOpened{
+    position: relative;
+    margin-top: -7px;
+    float: left;
+    font-size: 20px;
+    margin-right: 3px;
+}
+.searchSectorName{
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+}
+.searchCategoriesLevelOne{
+    position: relative;
+    width:100%;
+    height:0px;
+    overflow:hidden;
+}
+.searchCategoryLevelOne{
+    position: relative;
+    margin-top: 8px;
+    margin-left: 5px;
+}
+.searchCategoryLevelOne:hover{
+    cursor:pointer;
+}
+.categoryLevelOneAccordionArrow{
+    position: relative;
+    margin-top: -2px;
+    margin-right: 3px;
+    float: left;
+    font-size: 14px;
+}
+.categoryLevelOneAccordionArrowOpened{
+    position: relative;
+    margin-top: -9px;
+    margin-right: 3px;
+    float: left;
+    font-size: 20px;
+}
+.searchCategoryLevelOneName{
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.searchCategoriesLevelTwo{
+    position: relative;
+    width:100%;
+    height:0px;
+    overflow:hidden;
+}
+.searchCategoryLevelTwo{
+    position: relative;
+    margin-top: 8px;
+    margin-left: 10px;
+}
+.searchCategoryLevelTwo:hover{
+    cursor:pointer;
+}
+.categoryLevelTwoAccordionArrow{
+    position: relative;
+    margin-top: -1px;
+    margin-right: 3px;
+    float: left;
+    font-size: 13px;
+}
+.categoryLevelTwoAccordionArrowOpened{
+    position: relative;
+    margin-top: -9px;
+    margin-right: 3px;
+    float: left;
+    font-size: 20px;
+}
+.searchCategoryLevelTwoName{
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.searchCategoriesLevelThree{
+    position: relative;
+    width:100%;
+    height:0px;
+    overflow:hidden;
+}
+.searchCategoryLevelThree{
+    position: relative;
+    margin-top: 8px;
+    margin-left: 13px;
+}
+.searchCategoryLevelThree:hover{
+    cursor:pointer;
+}
+.categoryLevelThreeAccordionArrow{
+    position: relative;
+    margin-top: -1px;
+    margin-right: 3px;
+    float: left;
+    font-size: 13px;
+}
+.categoryLevelThreeAccordionArrowOpened{
+    position: relative;
+    margin-top: -8px;
+    margin-right: 3px;
+    float: left;
+    font-size: 20px;
+}
+.searchCategoryLevelThreeName{
+    text-transform: uppercase;
+    font-size: 12px;
+}
+.searchCategoryLevelFour{
+    position: relative;
+    margin-top: 8px;
+    margin-left: 16px;
+}
+.searchCategoriesLevelFour{
+    position: relative;
+    width:100%;
+    height:0px;
+    overflow:hidden;
+}
+.searchCategoryLevelFour:hover{
+    cursor:pointer;
+}
+.searchCategoryLevelFourName{
+    font-size: 12px;
+    margin-left: 5px;
+}

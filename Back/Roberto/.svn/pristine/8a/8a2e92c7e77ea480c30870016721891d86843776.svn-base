@@ -1,0 +1,67 @@
+<?php
+if ($mobile == "1") {
+    ?><link href="/css/projects/viewMobile.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/js/projects/viewMobile.js"></script>
+<?php } else {
+    ?><link href="/css/projects/view.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="/js/projects/view.js"></script><?php } ?>
+
+<?php
+$filesArray = array();
+foreach ($project->projectFiles as $projectFile)
+    $filesArray[] = HelperFunctions::modelToArray($projectFile);
+?>
+<div id="filesForJS" style='display:none'>
+    <?php echo json_encode($filesArray); ?>
+</div>
+<?php
+if ($mobile == "1") {
+    ?><div id="headerDummy"></div>
+<?php }
+    ?>
+<div id="projectDevelopment">
+    <div id="projectDevelopmentContainer">
+        <div class="centeredContent">
+            <div id="projectCol1">
+                <?php
+                    $this->renderPartial('/tools/MMGallery', array('files' => array()));
+                ?>
+            </div>
+            <div id="projectCol2">
+
+
+                <?php
+                if ($mobile == "1") {
+                    ?><div class="projectInfoDiv">
+                        <span class="projectTitle font1">PROYECTO: </span> <span class="projectTitle font7"> <?php echo $project->name; ?></span>
+                    </div>
+                    <div class="projectInfoDiv">
+                        <span class="projectTitle font1">TRABAJO: </span> <span class="projectTitle font7"> <?php echo (string) $category; ?></span>
+                    </div>
+                    <div class="projectInfoDivLast">
+                        <span class="projectTitle font1">DESCRIPCIÓN: </span> <span class="projectTitle font7"> <?php echo $project->description; ?></span>
+                    </div>
+                <?php } else {
+                    ?><div class="projectTitle font1">
+                        PROYECTO
+                    </div>
+                    <div class="projectInfo font7">
+                        <?php echo $project->name; ?>
+                    </div>
+                    <div class="projectTitle font1">
+                        TRABAJO
+                    </div>
+                    <div class="projectInfo font7">
+                        <?php echo (string) $category; ?>
+                    </div>
+                    <div class="projectTitle font1">
+                        DESCRIPCION
+                    </div>
+                    <div class="projectInfo font7">
+                        <?php echo $project->description; ?>
+                    </div>
+                    <img class="lineProjectDevelopment" src="/files/layouts/lineProjectDevelopment.png"/><?php } ?>                   
+            </div>
+        </div>
+    </div>
+</div>

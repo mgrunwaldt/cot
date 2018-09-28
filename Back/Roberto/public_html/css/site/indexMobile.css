@@ -1,0 +1,121 @@
+#coverContainer{
+    min-width: 0px;
+    height: 800px;
+    background-image: url("/files/site/coverBackgroundMobile.png");
+}
+#aboutUsRobertoContainer{
+    width: 100%;
+    min-width: 0px;
+}
+#buttonsContainer{
+    min-width: 0px;
+    width: 100%;
+}
+#portfolioContainer{
+    min-width: 0px;
+    width: 100%;
+    text-align: center;
+}
+#portfolioRow1{
+    min-width: 0px;
+    width: 100%;
+}
+#portfolioRow2{
+    min-width: 0px;
+    width: auto;
+    bottom: 10px;
+    display: block;
+    max-width: none;
+    margin: 0 auto;
+    display: inline-block;
+}
+#coverLogoImage{
+    margin: 140px auto;
+    opacity: 1;
+}
+#aboutUsRobertoRow1 {
+    margin-top: 55px;
+    font-size: 25px;
+}
+#aboutUsRobertoRow2 {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 15px;
+    display: block;
+    margin: 3%;
+    letter-spacing: 0px;
+    line-height: 138%;
+}
+#aboutUsRobertoContainer {
+    height: 320px;
+
+}
+.titles {
+    margin-top: 10px;
+    margin-left: 45px;
+}
+.buttons{
+    margin-left: 45px;
+}
+#portfolioSuperiorBarTitle {
+    text-align: center;
+    margin: 40px auto;
+    float: none;
+}
+.portfolioSuperiorBarOptions {
+    float: left;
+    margin-left: 6px;
+    font-size: 9px;
+    margin-top: 6px;
+}
+.projectContainer{
+    height: 228.005px;
+    width: 100%;
+}
+#portfolio {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.projectImageOverlay{
+    position: absolute;
+    bottom: 0px;
+    background-image: url("/files/site/projectsOverlay.png");
+    width: 100%;
+    height: 20%;
+    opacity: 1;
+}
+#portfolioOptionsSeparator{
+    position: relative;
+    float: left;
+    margin-left: 12px;
+    background-color: black;
+    width: 1px;
+    height: 23px;
+}
+.portfolioSuperiorBarFirstOption{
+    float: left;
+    margin-top: 6px;
+}
+#cover{
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    min-width: 0px;
+}
+.catImages{
+    height: 270px;
+    position: relative;
+    margin: 42px auto;
+    display: block;
+}
+.projectImageText {
+    position: relative;
+    font-size: 18px;
+    float: right;
+    margin-top: 0px;
+    text-transform: uppercase;
+    margin-right: 15px;
+}

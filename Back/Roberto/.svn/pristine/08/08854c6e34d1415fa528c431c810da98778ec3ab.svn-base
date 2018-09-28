@@ -1,0 +1,50 @@
+#rating{
+    position:relative;
+    width:135px;
+    height:25px;
+}
+.ratingStar{
+    position: relative;
+    float:left;
+    margin-right: 2px;
+    background-image: url('/images/ratings/star.png');
+    background-repeat: no-repeat;
+    width:25px;
+    height:25px;
+    overflow:hidden;
+}
+.ratingStarOff{
+    background-position: 0px -40px;
+}
+.ratingStarOff:hover{
+    cursor:pointer;
+}
+.ratingStarOn{
+    background-position: 0px 0px;
+}
+
+#ratingUser{
+    position:relative;
+    width:105px;
+    height:20px;
+}
+.ratingUserStar{
+    position: relative;
+    float: left;
+    margin-right: 1px;
+    background-image: url('/images/ratings/star.png');
+    background-repeat: no-repeat;
+    background-size: 30px 60px;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+}
+.ratingUserStarOff{
+    background-position: 0px 0px;
+}
+.ratingUserStarOff:hover{
+    cursor:pointer;
+}
+.ratingUserStarOn{
+    background-position: 0px -20px;
+}

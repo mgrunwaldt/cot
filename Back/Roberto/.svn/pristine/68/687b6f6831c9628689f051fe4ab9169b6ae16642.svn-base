@@ -1,0 +1,282 @@
+.FileDiv{
+    position:absolute;
+    left:0px;
+    top:0px;
+    width: 100%;
+    height: 100%;
+    font-size: 100%;
+}
+.FileMainDiv{
+    position: absolute;
+    left:0%;
+    top:10%;
+    width: 70%;
+    height: 70%;
+    border: solid 1px grey;
+}
+.FileOptionsDiv{
+    position:absolute;
+    left:0%;
+    top:83%;
+    width: 70%;
+    height: 12%;
+}
+.FileAddFileIframe{
+    position:absolute;
+    top:33%;
+    left:0px;
+    width: 100%;
+    height: 67%;
+}
+.FileAddFileImg{
+    position:absolute;
+    top:0px;
+    right:0px;
+    height: 100%;
+}
+.FileAddFileImg:hover{
+    cursor:pointer;
+}
+.FileRemoveFileImg{
+    position:absolute;
+    top:0px;
+    left:0px;
+    height: 100%;
+}
+.FileRemoveFileImg:hover{
+    cursor:pointer;
+}
+.FileAddFileMenuDiv{
+    position: absolute;
+    left:56%;
+    top:31%;
+    height:50%;
+    width:20%;
+    background-color: white;
+    border:grey 1px solid;
+    opacity:0;
+    filter:alpha(opacity=0);
+}
+.FileAddFileVideoImg{
+    position: absolute;
+    left:0px;
+    top:0px;
+    height:100%;
+}
+.FileAddFileFileImg{
+    position: absolute;
+    left:0px;
+    top:0px;
+    height:100%;
+}
+.FileAddFileImageImg{
+    position: absolute;
+    left:0px;
+    top:0px;
+    height:100%;
+}
+.FileAddVideoMenuDiv{
+    position: absolute;
+    left:15%;
+    top:30%;
+    height:30%;
+    width:70%;
+    background-color: white;
+    border:grey 1px solid;
+    opacity:0;
+    filter:alpha(opacity=0);
+    display:none;
+}
+.FileAddVideoMenuTxt{
+    position: absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:30%;
+    font-family: 'tahoma';
+    text-align: center;
+}
+.FileAddVideoIdInput{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+    width: 80%;
+    height: 30%;
+    font-family: 'tahoma';
+    text-align: left;
+}
+.FileAddVideoIconImg{
+    position: absolute;
+    right:10%;
+    top:70%;
+    height:30%;
+}
+.FileAddVideoIconImg:hover{
+    cursor:pointer;
+}
+.FileRemoveVideoIconImg{
+    position: absolute;
+    left:10%;
+    top:70%;
+    height:30%;
+}
+.FileRemoveVideoIconImg:hover{
+    cursor:pointer;
+}
+.FileAddFileVideoDiv{
+    position: relative;
+    height:33%;
+    width: 60%;
+    margin: 0px auto;
+    opacity:0.75;
+    filter:alpha(opacity=75);
+}
+.FileAddFileVideoDiv:hover{
+    cursor:pointer;
+    opacity:1;
+    filter:alpha(opacity=100);
+}
+.FileAddFileFileDiv{
+    position: relative;
+    height:33%;
+    width: 60%;
+    margin: 0px auto;
+    opacity:0.75;
+    filter:alpha(opacity=75);
+}
+.FileAddFileFileDiv:hover{
+    cursor:pointer;
+    opacity:1;
+    filter:alpha(opacity=100);
+}
+.FileAddFileImageDiv{
+    position: relative;
+    height:33%;
+    width: 60%; 
+    margin: 0px auto;
+    opacity:0.75;
+    filter:alpha(opacity=75);
+}
+.FileAddFileImageDiv:hover{
+    cursor:pointer;
+    opacity:1;
+    filter:alpha(opacity=100);
+}
+.FileLoaderDiv{
+    position:absolute;
+    width:20%;
+    left:40%;
+    top:25%;
+}
+.FileLoaderImg{
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:0px;
+    top:0px;
+}
+.FileImg{
+    position:absolute;
+    opacity:0;
+    filter:alpha(opacity=0);
+}
+.FileLoaderDiv{
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    opacity:0;
+    filter:alpha(opacity=0);
+    display:none;
+}
+.FileBlackBkg80{
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    background-color:black;
+    opacity:0.8;
+    filter:alpha(opacity=80);
+}
+.FileLoaderImg{
+    position:absolute;
+    left:45%;
+    top:35%;
+    width:10%;
+    height:auto;
+}
+.videoCover{
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+}
+.FileList{
+    position:absolute;
+    left:75%;
+    top:0px;
+    width:20%;
+    height:100%;
+    display:none;
+}
+.FileListArrowUp{
+    position:absolute;
+    left:25%;
+    top:2.5%;
+    width:50%;
+    height:5%;
+    display:none;
+    opacity:0.75;
+    filter:alpha(opacity=75);
+    display:none;
+}
+.FileListArrowUp:hover{
+    cursor:pointer;
+    opacity:1;
+    filter:alpha(opacity=100);
+}
+.FileListItemsContainer{
+    position:absolute;
+    left:0px;
+    top:10%;
+    width:100%;
+    height:80%;
+    overflow:hidden;
+}
+.FileListItems{
+    position:absolute;
+    left:0px;
+    top:0%;
+    width:100%;
+    height:100%;
+}
+.FileListItem{
+    position:relative;
+    width:100%;
+    height:20%;
+    opacity:0.75;
+    filter:alpha(opacity=75);
+}
+.FileListItem:hover{
+    cursor:pointer;
+    opacity:1;
+    filter:alpha(opacity=100);
+}
+.FileListArrowDown{
+    position:absolute;
+    left:25%;
+    top:92.5%;
+    width:50%;
+    height:5%;
+    opacity:0.75;
+    filter:alpha(opacity=75);
+    display:none;
+}
+.FileListArrowDown:hover{
+    cursor:pointer;
+    opacity:1;
+    filter:alpha(opacity=100);
+}

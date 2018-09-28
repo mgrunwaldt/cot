@@ -1,0 +1,33 @@
+#description{
+    width: 72%;
+    margin-left: 14%;
+    margin-top: 40px;
+    text-align: center;
+    line-height: 19px;
+    font-size: 15px;
+    margin-bottom: 55px;
+}
+#map{
+    display: block;
+    position: relative;
+    width: 90%;
+    margin-left: 5%;
+    margin-bottom: 40px;
+}
+#ranchSelect{
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    width: 300px;
+    height: 35px;
+    border: none;
+    background-color: transparent;
+    background-image: url('/files/site/selectBkg.png');
+    border-radius: 6px;
+    color: white;
+    letter-spacing: 2px;
+    padding-left: 30px;
+    font-size: 13px;
+    text-transform: uppercase;
+}

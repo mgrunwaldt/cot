@@ -1,0 +1,139 @@
+.content{
+    width:950px;
+}
+#optionsBar {
+    margin-top: 20px;
+    font-size: 10px;
+    width:666px;
+    margin-left:auto;
+    margin-right: auto;
+    height:22px;
+}
+#titlesContainer{
+    margin-left:auto;
+    margin-right:auto;
+    width: 116px;
+    float:left;
+}
+.titlesItem {
+    float:left;
+    text-align:center;
+    margin-right:3px;
+    cursor: pointer;
+    font-size: 10px;
+    line-height: 22px;
+}
+.hoverable:hover{
+    color:red;
+}
+#parameters {
+    line-height:22px;
+    float:left;
+    width:540px;
+}
+.parameter {
+    float:left;
+    margin-left: 15px;
+}
+#from,#to{
+    border: 1px solid #ece8e8;
+}
+#updateButton{
+    float:left;
+    margin-left: 15px;
+}
+#accordion{
+    clear:both;
+}
+.sectionHeader{
+    width:948px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #ece8e8;
+    font-size: 10px;
+    font-weight: normal;
+    margin-top:15px;
+}
+.mainGraph{
+    margin-bottom: 15px;
+}
+.legends{
+    clear:both;
+    margin-left:auto;
+    margin-right:auto;
+    height: 32px;
+}
+.legend{
+    float:left;
+    height:30px;
+    padding-left:15px;
+    padding-right:15px;
+    border: 1px solid #ece8e8;
+    margin-right: 8px;
+    margin-left: 8px;
+    margin-bottom: 15px;
+}
+.colorSample{
+    height:15px;
+    width: 15px;
+    float:left;
+    margin-right: 15px;
+    margin-top:7px;
+    top:7px;
+}
+.legendName{
+    float:left;
+    line-height: 30px;
+}
+#tiles{
+    width:700px;
+    margin-left:auto;
+    margin-right:auto;
+}
+.tileRow {
+    clear:both;
+    height: 50px;
+    margin-bottom: 15px;
+}
+.tileTitle {
+    text-align: center;
+    float:left;
+    width:16%;
+    height: 50px;
+    line-height: 50px;
+    font-size: 20px;
+}
+.tile {
+    float:left;
+    width:28%;
+    height: 50px;
+    line-height: 50px;
+    text-align: right;
+    font-size: 24px;
+}
+.delta{
+    width: 30px;
+    height: 30px;
+    position: relative;
+    top: 5px;
+}
+.pies{
+    clear:both;
+    height:167px;
+}
+.pieDiv{
+    float:left;
+    width:298px;
+    border: 1px solid #ece8e8;
+    margin-right: 15px;
+    text-align: center;
+}
+.pie{
+    width: 100%;
+    height: 200px;
+}
+.graphTitle{
+    width:100%;
+    text-align: center;
+}

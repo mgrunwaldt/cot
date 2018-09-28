@@ -1,0 +1,9 @@
+#description{
+    width: 90%;
+    margin-left: 5%;
+    text-align: justify;
+}
+#ranchSelect{
+    font-size:13px;
+    letter-spacing:1px;
+}

@@ -1,0 +1,6 @@
+var Index = {};
+
+$(document).ready(function(){
+    $('#menuInicio').css({'color':'black', 'cursor':'pointer'})
+    Gallery.start(parseFloat($('#header').height()), parseFloat($('#footer').height()), true, false, Main.isMobile);
+});

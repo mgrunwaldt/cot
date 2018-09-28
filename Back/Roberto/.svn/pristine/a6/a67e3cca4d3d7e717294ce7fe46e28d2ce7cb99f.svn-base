@@ -1,0 +1,39 @@
+
+    <div class='adminDataRow'>
+        <div class='adminDataRowTitle'>Nombre:</div>
+        <input type='text' id='name' class='adminInput300'/>
+    </div>
+    <div class='adminDataRow'>
+        <div class='adminDataRowTitle'>Predeterminado:</div>
+        <div id='is_default' class='adminCheckbox'></div>
+    </div>
+    <div class='adminDataRow'>
+        <div class='adminDataRowTitle'>Activo:</div>
+        <div id='active' class='adminCheckbox'></div>
+    </div>
+
+    <div class='adminDataRow'>
+        <div class='centeredWebTextTitle'><b>Textos</b></div>
+    </div>
+
+    <input id="webTexts" type="hidden" value='<?php echo json_encode($webTexts)?>'/>
+    
+    <?php 
+        if(!$isNewRecord){
+            ?>
+         <input id="languageWebTexts" type="hidden" value='<?php echo json_encode($languageWebTexts)?>'/>
+    <?php
+        }
+    ?>
+
+    <?php 
+        foreach($webTexts as $text){
+            ?>
+            <div class='adminDataRow'>
+                <div id="<?php echo "web_text_".$text['id']?>" class='adminDataRowTitle'><?php echo $text['name'];?></div>
+                <textarea type='text' id='<?php echo str_replace(" ","_",$text['name']);?>' class='adminInput300'/></textarea>
+            </div>
+        
+        <?php 
+        }
+    ?>
