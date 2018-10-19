@@ -118,4 +118,13 @@ class Routes extends \yii\db\ActiveRecord
             echo("OK");
         else print_r($this->getErrors());
     }
+
+    public static function getFromId($id){
+        $route = Routes::findOne(['id' => $id]);
+        if($route == null){
+            Errors::log("Get Route From Id", "Route Id ".$id);
+            throw new NotFoundHttpException("La ruta asociada a este bus es incorrecta");
+        }
+        return $route;
+    }
 }

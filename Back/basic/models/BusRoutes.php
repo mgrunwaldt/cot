@@ -52,4 +52,13 @@ class BusRoutes extends \yii\db\ActiveRecord
             'deleted' => 'Deleted',
         ];
     }
+
+    public static function getFromBusId($busId){
+        $busRoute = BusRoutes::find()->where(['bus_id' => $busId,'is_active' =>1])->one();
+        if($busRoute == null){
+            Errors::log("Get Bus Route From Bus", "Bus Id ".$busId);
+            throw new NotFoundHttpException("Este omnibus no tiene ruta asociada");
+        }
+        return $busRoute;
+    }
 }

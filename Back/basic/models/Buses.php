@@ -55,4 +55,13 @@ class Buses extends \yii\db\ActiveRecord
             'deleted' => 'Deleted',
         ];
     }
+
+    public static function getFromDevice($deviceId){
+        $bus =  Buses::find()->where(['device_id' => $deviceId,'deleted' =>0])->one();
+        if($bus == null){
+            Errors::log("Get Bus From Device", "Device Id ".$deviceId);
+            throw new NotFoundHttpException("No existe un dispositivo con este ID asociado a un omnibus");
+        }
+        return $bus;
+    }
 }

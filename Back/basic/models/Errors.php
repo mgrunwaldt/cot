@@ -59,4 +59,8 @@ class Errors extends \yii\db\ActiveRecord
             'date' => 'Date',
         ];
     }
+
+    public static function log($action, $message, $deviceId = 0){
+
+    }
 }

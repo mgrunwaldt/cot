@@ -94,4 +94,13 @@ class Stops extends \yii\db\ActiveRecord
             echo("OK");
         else print_r($this->getErrors());
     }
+    public static function getFromId($id){
+        $stop = Stops::findOne(['id'=>$id]);
+        if($stop == null){
+            Errors::log("Get Stop From Id", "Stop Id ".$id
+            );
+            throw new NotFoundHttpException("No existe parada con este id");
+        }
+        return $stop;
+    }
 }
