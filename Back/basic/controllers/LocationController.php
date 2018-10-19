@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\helpers\ApiHelper;
 use app\models\Buses;
 use app\models\BusRoutes;
 use app\models\Routes;
@@ -83,18 +84,24 @@ class LocationController extends \yii\web\Controller
 
                 }
                 else{
-                    //ERRORS LOG
                     throw new NotFoundHttpException("Esta ruta no tiene paradas");
                 }
             }
             else{
-                //ERRORS LOG
                 throw new \InvalidArgumentException("Debes enviar latitud longitud ultima distancia y device");
             }
         }
+        catch (NotFoundHttpException $ex){
+            \Yii::$app->response->statusCode = 404;
+            $response["message"] = "No se encontro el recurso buscado - ".$ex->getMessage();
+        }
+        catch (\InvalidArgumentException $ex){
+            \Yii::$app->response->statusCode = 400;
+            $response["message"] = "No se enviaron todos los parametros necesarios - ".$ex->getMessage();
+        }
         catch (\Exception $ex){
-            //ERRORS LOG
-            throw new ServerErrorHttpException("Ocurrió un error inesperado, mensaje - ".$ex->getMessage());
+            \Yii::$app->response->statusCode = 500;
+            $response["message"] = "Ocurrió un error inesperado, mensaje - ".$ex->getMessage();
         }
         return json_encode($response);
     }

@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9fb7df03-543e-46d6-bb5c-4570cbfaa6c2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/basic/controllers/LocationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/basic/controllers/LocationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basic/helpers/HelperFunctions.php" beforeDir="false" afterPath="$PROJECT_DIR$/basic/helpers/HelperFunctions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/basic/models/BusRoutes.php" beforeDir="false" afterPath="$PROJECT_DIR$/basic/models/BusRoutes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/basic/models/Buses.php" beforeDir="false" afterPath="$PROJECT_DIR$/basic/models/Buses.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/basic/models/Errors.php" beforeDir="false" afterPath="$PROJECT_DIR$/basic/models/Errors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/basic/models/RouteStops.php" beforeDir="false" afterPath="$PROJECT_DIR$/basic/models/RouteStops.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/basic/models/Routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/basic/models/Routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/basic/models/Stops.php" beforeDir="false" afterPath="$PROJECT_DIR$/basic/models/Stops.php" afterDir="false" />
     </list>
@@ -32,7 +34,7 @@
         <counts>
           <entry key="htaccess" value="2" />
           <entry key="js" value="3" />
-          <entry key="php" value="65" />
+          <entry key="php" value="70" />
           <entry key="png" value="1" />
         </counts>
       </usages-collector>
@@ -40,89 +42,41 @@
         <counts>
           <entry key="Image" value="1" />
           <entry key="JavaScript" value="3" />
-          <entry key="PHP" value="65" />
+          <entry key="PHP" value="70" />
           <entry key="htaccess" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="js" value="4" />
-          <entry key="php" value="3946" />
+          <entry key="php" value="4216" />
           <entry key="txt" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JavaScript" value="4" />
-          <entry key="PHP" value="3946" />
+          <entry key="PHP" value="4216" />
           <entry key="PLAIN_TEXT" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.php.new.class">
         <counts>
-          <entry key="PHP Class.type" value="1" />
+          <entry key="PHP Class.type" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/basic/models/RouteStops.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/basic/models/Stops.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="589">
-              <caret line="103" column="20" selection-start-line="103" selection-start-column="20" selection-end-line="103" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/basic/controllers/RoutesController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="93" column="49" selection-start-line="93" selection-start-column="45" selection-end-line="93" selection-end-column="49" />
-              <folding>
-                <element signature="e#35#43#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/basic/models/Routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="125" column="45" selection-start-line="125" selection-start-column="45" selection-end-line="125" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/basic/controllers/LocationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="87" column="17" selection-start-line="87" selection-start-column="17" selection-end-line="87" selection-end-column="17" />
+            <state relative-caret-position="508">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
-                <element signature="e#35#56#0#PHP" expanded="true" />
+                <element signature="e#35#61#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/basic/models/Buses.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="58" column="4" lean-forward="true" selection-start-line="58" selection-start-column="4" selection-end-line="65" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -189,13 +143,14 @@
         <option value="$PROJECT_DIR$/basic/views/busRoutes/upload.php" />
         <option value="$PROJECT_DIR$/basic/controllers/BusRoutesController.php" />
         <option value="$PROJECT_DIR$/basic/controllers/RoutesController.php" />
-        <option value="$PROJECT_DIR$/basic/models/RouteStops.php" />
-        <option value="$PROJECT_DIR$/basic/helpers/HelperFunctions.php" />
         <option value="$PROJECT_DIR$/basic/models/Errors.php" />
         <option value="$PROJECT_DIR$/basic/models/Buses.php" />
         <option value="$PROJECT_DIR$/basic/models/BusRoutes.php" />
         <option value="$PROJECT_DIR$/basic/models/Routes.php" />
+        <option value="$PROJECT_DIR$/basic/models/RouteStops.php" />
         <option value="$PROJECT_DIR$/basic/models/Stops.php" />
+        <option value="$PROJECT_DIR$/basic/helpers/HelperFunctions.php" />
+        <option value="$PROJECT_DIR$/basic/helpers/ApiHelper.php" />
         <option value="$PROJECT_DIR$/basic/controllers/LocationController.php" />
       </list>
     </option>
@@ -445,12 +400,12 @@
       <updated>1538159448820</updated>
       <workItem from="1538159450530" duration="669000" />
       <workItem from="1539699783745" duration="6132000" />
-      <workItem from="1539804769790" duration="13208000" />
+      <workItem from="1539804769790" duration="14886000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20009000" />
+    <option name="totallyTimeSpent" value="21687000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="6" />
@@ -484,8 +439,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Cot/protected/config/main.php" />
-    <entry file="file://$PROJECT_DIR$/Cot/protected/views/builder/build.php" />
     <entry file="file://$PROJECT_DIR$/Cot/protected/controllers/BuilderController.php" />
     <entry file="file://$PROJECT_DIR$/Cot/protected/views/layouts/admin.php" />
     <entry file="file://$PROJECT_DIR$/Cot/protected/controllers/AdministratorsController.php" />
@@ -624,13 +577,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic/models/RouteStops.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="67" column="16" selection-start-line="67" selection-start-column="16" selection-end-line="67" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/basic/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1182" />
@@ -657,13 +603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic/helpers/HelperFunctions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/basic/models/Errors.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="603">
@@ -678,24 +617,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic/models/BusRoutes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="59" column="83" lean-forward="true" selection-start-line="58" selection-start-column="12" selection-end-line="59" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/basic/models/Buses.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="58" column="4" lean-forward="true" selection-start-line="58" selection-start-column="4" selection-end-line="65" selection-end-column="5" />
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#30#38#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic/models/Stops.php">
+    <entry file="file://$PROJECT_DIR$/basic/models/BusRoutes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="589">
-          <caret line="103" column="20" selection-start-line="103" selection-start-column="20" selection-end-line="103" selection-end-column="20" />
+        <state relative-caret-position="-237">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#30#38#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic/models/Routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#30#38#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -709,19 +657,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/basic/models/Routes.php">
+    <entry file="file://$PROJECT_DIR$/basic/models/RouteStops.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="125" column="45" selection-start-line="125" selection-start-column="45" selection-end-line="125" selection-end-column="86" />
+        <state relative-caret-position="15">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic/models/Stops.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-896">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#30#38#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/SPL/SPL.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="26" column="1" lean-forward="true" selection-start-line="26" selection-start-column="1" selection-end-line="26" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic/helpers/ApiHelper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="25" column="17" lean-forward="true" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/basic/helpers/HelperFunctions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/basic/controllers/LocationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="87" column="17" selection-start-line="87" selection-start-column="17" selection-end-line="87" selection-end-column="17" />
+        <state relative-caret-position="508">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
           <folding>
-            <element signature="e#35#56#0#PHP" expanded="true" />
+            <element signature="e#35#61#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

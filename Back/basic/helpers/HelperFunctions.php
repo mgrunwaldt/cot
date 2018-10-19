@@ -28,4 +28,6 @@ class HelperFunctions
         $angle = atan2(sqrt($a), $b);
         return $angle * $earthRadius;
     }
+
+
 }
