@@ -69,4 +69,13 @@ class RouteStops extends \yii\db\ActiveRecord
             echo("OK");
         else print_r($this->getErrors());
     }
+
+    public static function getFromRouteAndNumber($routeId,$stopNumber){
+        $stop = RouteStops::find()->where(['route_id' => $routeId,'deleted' =>0, 'stop_number' => $stopNumber])->one();
+        if($stop == null){
+            Errors::log("Get RouteStop from Route and Number", "Route Id ".$routeId." - stopNumber ".$stopNumber);
+            throw new NotFoundHttpException("No hay una parada para esta ruta y numero de parada");
+        }
+        return $stop;
+    }
 }

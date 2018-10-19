@@ -55,8 +55,10 @@ class LocationController extends \yii\web\Controller
                             $minDistanceRouteStop = $routeStop;
                         }
                     }
+                    $stopNumber = $minDistanceRouteStop -> stop_number;
+
                     if($minDistance < LocationController::$INSIDE_RADIOUS){
-                        if($minDistanceRouteStop->stop_number == $route->total_stops){
+                        if($stopNumber == $route->total_stops){
                             $response["data"]["showAnimation"] = 5;
                         }
                         else $response["data"]["showAnimation"] = 2;
@@ -64,7 +66,7 @@ class LocationController extends \yii\web\Controller
                     }
                     else if($minDistance < $route->stop_radius){
                         if($previousDistance == 0 || $minDistance < $previousDistance){
-                            if($minDistanceRouteStop->stop_number == $route->total_stops){
+                            if($stopNumber == $route->total_stops){
                                 $response["data"]["showAnimation"] = 4;
                             }
                             else $response["data"]["showAnimation"] = 1;
@@ -80,8 +82,18 @@ class LocationController extends \yii\web\Controller
                         $response["data"]["previousDistance"] = 0;
                     }
                     $response["data"]["stopName"] = $minDistanceStop->short_name;
-                    //falta siguiente y anterior
-
+                    if($stopNumber != 0){
+                        $previousStopNumber = $stopNumber - 1;
+                        $previousRouteStop = RouteStops::getFromRouteAndNumber($route->id, $previousStopNumber);
+                        $previousStop = Stops::getFromId($previousRouteStop->stop_id);
+                        $response["data"]["previousStop"] =$previousStop->short_name;
+                    }
+                    if($stopNumber != count($routeStops)){
+                        $nextStopNumber = $stopNumber + 1;
+                        $nextRouteStop = RouteStops::getFromRouteAndNumber($route->id, $nextStopNumber);
+                        $nextStop = Stops::getFromId($nextRouteStop->stop_id);
+                        $response["data"]["nextStop"] =$nextStop->short_name;
+                    }
                 }
                 else{
                     throw new NotFoundHttpException("Esta ruta no tiene paradas");
