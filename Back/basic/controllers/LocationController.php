@@ -15,8 +15,9 @@ use yii\web\NotFoundHttpException;
 use yii\web\ServerErrorHttpException;
 
 
-class LocationController extends \yii\web\Controller
+class LocationController extends \yii\rest\Controller
 {
+
     private static $INSIDE_RADIOUS = 50;
 
     public function actionIndex()
@@ -30,7 +31,9 @@ class LocationController extends \yii\web\Controller
     }
 
     public function actionUpdateBus(){
-       // Yii::$app->request->post() ;
+        header('Access-Control-Allow-Origin: *');
+
+        // Yii::$app->request->post() ;
         $response = array();
         try{
             if(isset($_GET['latitude'])&&isset($_GET['longitude'])&&isset($_GET['deviceId'])&&isset($_GET['previousDistance'])){
@@ -57,6 +60,8 @@ class LocationController extends \yii\web\Controller
                     }
                     $stopNumber = $minDistanceRouteStop -> stop_number;
 
+                    $response["data"]["previousStop"] = "";
+                    $response["data"]["nextStop"] = "";
                     if($minDistance < LocationController::$INSIDE_RADIOUS){
                         if($stopNumber == $route->total_stops){
                             $response["data"]["showAnimation"] = 5;
@@ -115,7 +120,9 @@ class LocationController extends \yii\web\Controller
             \Yii::$app->response->statusCode = 500;
             $response["message"] = "Ocurrió un error inesperado, mensaje - ".$ex->getMessage();
         }
-        return json_encode($response);
+       // \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+
+        return $response;
     }
 
 

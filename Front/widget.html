@@ -1,9 +1,92 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
-</script>
-<script type="text/javascript" src="deviceInterface.js"></script>
-<link href="/Users/Martin/Documents/FL/ProyectoCOT/Front/main.css" rel="stylesheet" type="text/css" />
+<!DOCTYPE html>
+<html>
+<head>
+<title>read file</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+@font-face {
+  font-family: 'Helvetica';
+  src: url('Helvetica.eot?#iefix') format('embedded-opentype'), 
+   url('Helvetica.otf')  format('opentype'),
+    url('Helvetica.woff') format('woff'), 
+    url('Helvetica.ttf')  format('truetype'), 
+    url('Helvetica.svg#FuturaStd-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.helveticaFont{
+    font-family: 'Helvetica';
+    font-weight:normal;
+    -webkit-font-smoothing: auto;
+}
 
-<div id="container" style="width:1920px; height: 1080px; background-image:url('/Users/Martin/Documents/FL/ProyectoCOT/Front/backgroundImg.png'); background-size: 1920px 1080px;">
+#title{
+    position: relative;
+    width: 100%;
+    height: 140px;
+    text-align: center;
+    font-size: 72px;
+    top: 25px;
+    color: #3f2516;
+}
+
+#subTitle{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    top: 120px;
+    color: #3f2516;
+}
+
+#topText{
+    font-size: 70px;
+}
+
+#bottomText{
+    font-size: 150px;
+}
+
+.animation{
+    margin-left: 85px;
+    width: 90%;
+    margin-top: 265px;
+}
+
+.stopTextContainer{
+    width: 640px;
+    position: relative;
+    float: left;
+    font-size: 60px;
+    color: #3f2516;
+}
+
+#previousStop{
+    text-align: left;
+    left: 87px;
+
+}
+
+#actualStop{
+    text-align: center;
+}
+
+#nextStop{
+    text-align: right;
+    right: 110px;
+}
+
+
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="deviceInterface.js"></script>
+<script type="text/javascript" src="widjet.js"></script>
+
+</head>
+
+<body>
+    <div id="container" style="width:1920px; height: 1080px; background-image:url('backgroundImg.png'); background-size: 1920px 1080px;">
     <div id="title" class="helveticaFont">
     </div>
     <div id="subTitle">
@@ -13,9 +96,9 @@
         </div>
     </div>
     <div>
-        <img hidden id="animation1" class="animation" src="/Users/Martin/Documents/FL/ProyectoCOT/Front/Animation1.gif" style="width: 90%"/>
-        <img hidden id="animation2" class="animation" src="/Users/Martin/Documents/FL/ProyectoCOT/Front/Animation2.gif" style="width: 90%"/>
-        <img hidden id="animation3" class="animation" src="/Users/Martin/Documents/FL/ProyectoCOT/Front/Animation3.gif" style="width: 90%"/>
+        <img hidden id="animation1" class="animation" src="Animation1.gif" style="width: 90%"/>
+        <img hidden id="animation2" class="animation" src="Animation2.gif" style="width: 90%"/>
+        <img hidden id="animation3" class="animation" src="Animation3.gif" style="width: 90%"/>
     </div>
     <div>
         <div id="previousStop" class="stopTextContainer helveticaFont">
@@ -26,46 +109,7 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    var trayecto = "MONTEVIDEO - PUNTA DEL ESTE"
-    var title = "TRAYECTO: " + trayecto;
-    var subTitleTop = "Siguiente Parada:";
-    var subTitleBottom = "BUS STOP";
-    var previousStop = "asd";
-    var actualStop = "asd2";
-    var nextStop = "asd3";
 
-    setInterval(function() {
-        var infoArray = getLatitudLongitude();
-        alert("lat: " + infoArray.latitud);
-        alert("long: " + infoArray.longitud);
-        $.ajax({
-            type:"GET",
-            url:"https://api.meetup.com/2/cities",
-            success: function(data) {
+</body>
+</html>
 
-            //data.data.showAnimation int de 1 a 5
-            //data.data.previousDistance me lo tengo que guardar en una var
-            //data.data.stopName la que estoy llegando
-            //idem prevousStop y nextStop    
-
-            alert(data.results[0].country);
-        },error: function(error){}, // log algo error.message
-
-            dataType: 'jsonp',
-        });
-        
-    }, 5000);
-
-    document.getElementById('title').innerHTML = title;
-    document.getElementById('topText').innerHTML = subTitleTop;
-    document.getElementById('bottomText').innerHTML = subTitleBottom;
-    document.getElementById('previousStop').innerHTML = previousStop;
-    document.getElementById('actualStop').innerHTML = actualStop;
-    document.getElementById('nextStop').innerHTML = nextStop;
-
-    document.getElementById('animation3').hidden = false;
-    document.getElementById('animation2').hidden = true;
-    document.getElementById('animation1').hidden = true;
-    
-</script>
