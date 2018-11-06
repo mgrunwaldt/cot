@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>read file</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+
+@font-face {
+  font-family: 'Helvetica';
+  src: url('Helvetica.eot?#iefix') format('embedded-opentype'), 
+   url('Helvetica.otf')  format('opentype'),
+    url('Helvetica.woff') format('woff'), 
+    url('Helvetica.ttf')  format('truetype'), 
+    url('Helvetica.svg#FuturaStd-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.helveticaFont{
+    font-family: 'Helvetica';
+    font-weight:normal;
+    -webkit-font-smoothing: auto;
+}
+
+#title{
+    position: relative;
+    width: 100%;
+    height: 140px;
+    text-align: center;
+    font-size: 72px;
+    top: 25px;
+    color: #3f2516;
+}
+
+#subTitle{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    top: 120px;
+    color: #3f2516;
+}
+
+#topText{
+    font-size: 70px;
+}
+
+#bottomText{
+    font-size: 150px;
+}
+
+.animation{
+    margin-left: 85px;
+    width: 90%;
+    margin-top: 265px;
+}
+
+.stopTextContainer{
+    width: 640px;
+    position: relative;
+    float: left;
+    font-size: 60px;
+    color: #3f2516;
+}
+
+#previousStop{
+    text-align: left;
+    left: 87px;
+
+}
+
+#actualStop{
+    text-align: center;
+}
+
+#nextStop{
+    text-align: right;
+    right: 110px;
+}
+
+
+
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script language="javascript" type="text/javascript">
+    $(document).ready(function(){
+        var URL = "www.meat-app.com";
+        var trayecto = "MONTEVIDEO - PUNTA DEL ESTE"
+        var title = "TRAYECTO: " + trayecto;
+        var subTitleTop = "Siguiente Parada:";
+        var subTitleBottom = "BUS STOP";
+        var previousStop = "asd";
+        var actualStop = "asd2";
+        var nextStop = "asd3";
+        var previousDistance = 100;
+        var longitudes = [-55.08290774, -55.06590774, -55.0649066924, -55.06290774, -55.04290774];
+        var index = 0;
+        
+        setInterval(function() {
+
+            var latitude = -34.8753169056;
+            var longitude = longitudes[index%5];
+            index++;
+            $.ajax({
+                type:"GET",
+                dataType: 'json',
+               // dataType: 'jsonp',
+               // jsonp: 'json_callback',
+                url:"http://"+URL+"/location/update-bus",
+                data:{
+                    'latitude':latitude,
+                    'longitude':longitude,
+                    'deviceId':"27762",
+                    'previousDistance':previousDistance
+                },
+                success: function(json) {
+                    var animation = json.data.showAnimation;
+                   // previousDistance = data.data.previousDistance;
+                    actualStop = json.data.stopName;
+                    nextStop = json.data.nextStop;
+                    previousStop = json.data.previousStop;
+                   // alert("El animation es" +animation);
+
+                    switch(animation){
+                        case 0:
+                            document.getElementById('container').style.display = "none";
+                            break;
+                        case 1:
+                            document.getElementById('container').style.display = "block";
+                            setAnimations(false,true,true);
+                            setData("Siguiente Parada:", actualStop);
+                            break;
+                        case 2:
+                            document.getElementById('container').style.display = "block";
+                            setAnimations(true,false,true);
+                            setData("Parada Actual:", actualStop);
+                            break;
+                        case 3:
+                            document.getElementById('container').style.display = "block";
+                            setAnimations(true,true,false);
+                            setData("Siguiente Parada:", nextStop);
+                            break;
+                        case 4:
+                            document.getElementById('container').style.display = "block";
+                            break;
+                        case 5:
+                            document.getElementById('container').style.display = "block";
+                            break;
+                        default:
+                            break;
+
+                    }
+
+                //data.data.showAnimation int de 1 a 5
+                //data.data.previousDistance me lo tengo que guardar en una var
+                //data.data.stopName la que estoy llegando
+                //idem prevousStop y nextStop    
+
+            },error: function(error){
+                alert(error);
+            }, // log algo error.message
+            });
+            
+        }, 5000);
+
+        document.getElementById('title').innerHTML = title;
+        
+
+     
+
+        function setAnimations(first, second, third){
+            document.getElementById('animation1').hidden = first;
+            document.getElementById('animation2').hidden = second;
+            document.getElementById('animation3').hidden = third;
+        }
+
+        function setData(stopState,mainStop){
+            document.getElementById('title').innerHTML = title;
+            document.getElementById('topText').innerHTML = stopState;
+            document.getElementById('bottomText').innerHTML = mainStop;
+            document.getElementById('previousStop').innerHTML = previousStop;
+            document.getElementById('actualStop').innerHTML = actualStop;
+            document.getElementById('nextStop').innerHTML = nextStop;
+        }
+    });
+    
+</script>
+
+</head>
+
+<body>
+    <div id="container" style="width:1920px; height: 1080px; background-size: 1920px 1080px; background-color: white;">
+    <div id="title" class="helveticaFont">
+    </div>
+    <div id="subTitle">
+        <div id="topText" class="helveticaFont">
+        </div>
+        <div id="bottomText" class="helveticaFont">
+        </div>
+    </div>
+    <div>
+        <img hidden id="animation1" class="animation" src="Animation1.gif" style="width: 90%"/>
+        <img hidden id="animation2" class="animation" src="Animation2.gif" style="width: 90%"/>
+        <img hidden id="animation3" class="animation" src="Animation3.gif" style="width: 90%"/>
+    </div>
+    <div>
+        <div id="previousStop" class="stopTextContainer helveticaFont">
+        </div>
+        <div id="actualStop" class="stopTextContainer helveticaFont">
+        </div>
+        <div id="nextStop" class="stopTextContainer helveticaFont">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+

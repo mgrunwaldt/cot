@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>read file</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/widget.css">
+<style type="text/css">
+html, body {
+	background-color: transparent;
+	font-family: tahoma;
+	font-size: 48px;
+	height: 100%;
+	width: 100%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+</style>
+<script src="js/jquery.min.js"></script>
+<script language="javascript" type="text/javascript">
+
+ 		var URL = "www.meat-app.com";
+        var trayecto = "MONTEVIDEO - PUNTA DEL ESTE"
+        var title = "TRAYECTO: " + trayecto;
+        var subTitleTop = "Siguiente Parada:";
+        var subTitleBottom = "BUS STOP";
+        var previousStop = "asd";
+        var actualStop = "asd2";
+        var nextStop = "asd3";
+        var previousDistance = 100;
+        var longitudes = [-55.08290774, -55.06590774, -55.0649066924, -55.06290774, -55.04290774];
+        var index = 0;
+
+	function init_widget(config) {
+		if (!config) {
+			console.log("no json configuration found");
+			return;
+		}
+		window.filename = config.filename || "/root/test.txt"
+	}
+	/*function that starts the clock*/
+	function readFile() {
+		var timestamp = Date.now()
+		$.ajax
+        (
+            {
+                type: "GET",
+                url: "file://"+window.filename+"?cachebust="+timestamp,
+                async:true,
+                cache:false,
+                success: function(msg)
+                {
+					$('body').prepend('<div>'+msg+'</div>')
+                },
+                error:function (xhr, textStatus, thrownError)
+                {
+				   $('body').prepend('<div>'+xhr.status+'</div>')
+                }
+            }
+        );
+		/*repeat after 10 seconds*/
+		window.t = setTimeout(readFile, 5000);
+	}
+
+
+	function start_widget() {
+		readFile()
+	}
+
+	function stop_widget() {
+		if (window.t) {
+            clearTimeout(window.t)
+        }
+	}
+
+	/*test function to test while developing*/
+	function test_widget() {
+		init_widget({
+			filename:"/root/test.txt"
+		})
+		//setData();
+		start_widget()
+	}
+	function setData(stopState,mainStop){
+            document.getElementById('title').innerHTML = title;
+            document.getElementById('topText').innerHTML = stopState;
+            document.getElementById('bottomText').innerHTML = mainStop;
+            document.getElementById('previousStop').innerHTML = previousStop;
+            document.getElementById('actualStop').innerHTML = actualStop;
+            document.getElementById('nextStop').innerHTML = nextStop;
+        }
+</script>
+</head>
+
+<body>
+		<div id="container" style="width:1920px; height: 1080px;  background-size: 1920px 1080px;">
+				<div id="title" >
+				</div>
+				<div id="subTitle">
+					<div id="topText" >
+					</div>
+					<div id="bottomText">
+					</div>
+				</div>
+				<div>
+					
+				</div>
+				<div>
+					<div id="previousStop" class="stopTextContainer">
+					</div>
+					<div id="actualStop" class="stopTextContainer">
+					</div>
+					<div id="nextStop" class="stopTextContainer">
+					</div>
+				</div>
+			</div>
+
+</body>
+</html>
+
